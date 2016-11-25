@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+	<title>The Elevator Game </title>
+	<meta name="description" content="Be the elevator. See how well you do at efficiently getting people where they need to go." />
+
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" value="Be the elevator. See how well you do at efficiently getting people where they need to go.">
+
+	<!-- Open Graph data -->
+	<meta property="og:title" content="The Elevator Game" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://sandeepba.com/projects/elevator/" />
+	<meta property="og:image" content="http://sandeepba.com/public/images/elevator-game.png" />
+	<meta property="og:description" content="Be the elevator. See how well you do at efficiently getting people where they need to go. Part of a collaborative experiment to create a smarter, crowd-sourced elevator algorithm." />
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+        <style>
+        .share-buttons{
+			list-style: none;
+		}
+
+		.share-buttons li{
+			display: inline;
+		}
+        .left-right {
+            text-align: center;
+        }
+
+        .major-container {
+            text-align: center;
+        }
+
+        body {
+            background-color: white;
+            font-family: 'Source Code Pro';
+            background: lightgray;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        .svg-container {
+            display: inline-block;
+            vertical-align: top;
+            width: 530px;
+        }
+
+        svg {
+            border: 1px solid;
+        }
+
+        #queueHolder{
+            display: inline-block;
+            vertical-align: top;
+            width: 125px;
+            height: 450px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            color: black;
+            margin-right: 30px;
+        }
+
+        #queue{
+            width: 100px;
+            margin: 5px;
+            margin-bottom: 100px;
+            font-size: 20px;
+        }
+
+        .queueEntry{
+            width: 100px;
+            padding: 3px;
+            color: black;
+            margin-top: 5px;
+            font-size: 13px;
+            text-align: left;
+            cursor: move;
+        }
+
+        b{
+            font-size: 22px;
+        }
+
+        a{
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+            text-align: left;
+        }
+
+         #sortable { 
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #active { 
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #instructions {
+            text-align: left;
+            width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 12px;
+        }
+
+        #startButton {
+            text-align: center;
+            background: dimgray;
+            color: white;
+            padding: 7px;
+        }
+
+        #restartButton {
+            text-align: center;
+            background: dimgray;
+            color: white;
+            padding: 7px;
+        }
+
+        #startButton:hover {
+            background: black;
+            color: gainsboro;
+        }
+
+        #startButton:active {
+            color: white;
+        
+}
+        #start {
+            text-align: center;
+            width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 12px;
+        }
+
+        #stats {
+            margin-top: 15px;
+            text-align: center;
+            width: 670px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 12px;
+            margin-bottom: -5px;
+        }
+
+        #dialog-message {
+        	font-size: 12px;
+        	font-family: 'Source Code Pro';
+        }
+        </style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="major-container">
+            <h1> Elevator </h1>
+            <div id="instructions">
+            <p> Deliver passengers to the correct floors. Their colors correspond to the floor they would like to get to. Click floors or press the number keys to queue up floors, click and drag to re-order the queue. There will be 50 passengers-- try to minimize waiting time and energy consumption.  </p>
+            <div id="start">
+            <button id='startButton'> Start </button></div>
+            <a style="display: none;" href="#" id='restartButton' onclick="location.reload();"> Restart </a></div>
+            </div>
+            <div id='stats'>
+            <p>Passengers Delivered: <span id="passengerCountNum"> 0 </span> &nbsp; &nbsp;
+            Average Wait Time: <span id="waitTimeNum"> - </span> &nbsp; &nbsp;
+            Energy Consumption: <span id="energyNum"> 0 </span>
+            </div>
+            <div class="left-right">
+                <div class="svg-container"> 
+                </div>
+                <div id="queueHolder">
+                    <b> Queue </b>
+                        <ul id="active">
+                        </ul>
+                        <ul id="sortable">
+                        </ul>
+                    <div id="queue">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/vendor/d3.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-43226811-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+		<script>
+        var game = false;
+        var stats = {
+            'passengerCount': 0,
+            'waitTime': 0,
+            'energy' : 0,
+            'totalpeeps':0
+        }
+
+        $('#startButton').click(function(){
+            gameLoop();
+        });
+
+        $( "body" ).keypress(function( event ) {
+            //console.log(event.which)
+            switch (event.which){
+                case 49:
+                    console.log('floor 1');
+                    masterQueue.addToEnd(400);
+                    break;
+                case 50:
+                    console.log('floor 2')
+                    masterQueue.addToEnd(350);
+                    break;
+                case 51:
+                    console.log('floor 3')
+                    masterQueue.addToEnd(300);
+                    break;
+                case 52:
+                    console.log('floor 4')
+                    masterQueue.addToEnd(250);
+                    break;
+                case 53:
+                    console.log('floor 5')
+                    masterQueue.addToEnd(200);
+                    break;
+                case 54:
+                    console.log('floor 6')
+                    masterQueue.addToEnd(150);
+                    break;
+                case 55:
+                    console.log('floor 7')
+                    masterQueue.addToEnd(100);
+                    break;
+                case 56:
+                    console.log('floor 8')
+                    masterQueue.addToEnd(50);
+                    break;
+                case 57:
+                    console.log('floor 9')
+                    masterQueue.addToEnd(0);
+                    break;
+            }          
+        });
+
+        $(function() {
+            $( "#sortable" ).sortable();
+            $( "#sortable" ).disableSelection();
+        });
+
+        var dir = 'none'; // 'none', 'up', 'down'
+        var color = d3.scale.category10();
+        var floors = {
+            "1":[],
+            "2":[],
+            "3":[],
+            "4":[],
+            "5":[],
+            "6":[],
+            "7":[],
+            "8":[],
+            "9":[],
+            "10":[]
+        }
+
+        var svg = d3.select(".svg-container").append("svg")
+            .attr("width", 500)
+            .attr("height", 450)
+            .attr("class", "svg-border")
+
+
+        svg.selectAll("rect")
+            .data([50,100,150,200,250,300,350,400,450])
+          .enter().append("rect")
+            .attr("x", 65)
+            .attr("y", function(d,i){return i*50;})
+            .attr("height", function(d,i){if(i<10){return 50}})
+            .attr("width", 450)
+            .attr("fill",function(d) {return d.color = color(d-50);})
+            .style({'stroke': 'black', 'stroke-width': 1, "opacity": .9})
+            .on("click",function(d){
+                masterQueue.addToEnd(Number(d3.select(this).attr("y")));
+            });
+
+        
+
+        //add floor backing
+        for ( var i = 0; i < 10; i++ ) {
+            svg.append("rect")
+                .attr("x", 421)
+                .attr("y", function(){return i*50+15;})
+                .attr("height", 23)
+                .attr("width", 66)
+                .attr("fill", "white")
+                .style({'stroke': 'black', 'stroke-width': 1, "opacity": .9})                
+        } 
+                       
+        svg.selectAll('text')
+            .data([1,2,3,4,5,6,7,8,9].reverse())
+            .enter().append('text')
+            .attr('x',425)
+            .attr('y',function(d,i){return i*50+32;})
+            .text(function(d,i){return "Floor "+d.toString();})
+            .style({"fill":"black","font-size": "10px"});
+
+        var shaft = svg.append("rect")
+            .attr("x",function(d,i){return 49*i})
+            .attr("y",0)
+            .attr("height",450)
+            .attr("width",65)
+            .attr("fill",'gainsboro')
+            
+        var elevatorRopeLeft = svg.append("line") //rope 1
+            .attr("x1",20)
+            .attr("y1",0)
+            .attr("x2",20)
+            .attr("y2",410)
+            .style({'stroke': 'black', 'stroke-width': 2})
+
+        var elevatorRopeRight = svg.append("line") //rope 2
+            .attr("x1",40)
+            .attr("y1",0)
+            .attr("x2",40)
+            .attr("y2",410)
+            .style({'stroke': 'black', 'stroke-width': 2})
+
+        var elevatorBox = svg.append("rect") //box
+                .attr("x",5)
+                .attr("y",400)
+                .attr("height",50)
+                .attr("width",50)
+                .attr("fill",'white')
+                .style({'stroke': 'black', 'stroke-width': 4})
+
+        var elevatorDoor = svg.append("rect") //door
+                .attr("x",55)
+                .attr("y",424)
+                .attr("height",0)
+                .attr("width",1)
+                .style({'stroke': 'gainsboro', 'stroke-width': 4})
+
+        function moveElevator(newY){
+            if (newY < elevatorBox.attr('y')){
+                dir = 'up';
+            } else {
+                dir = 'down';
+            }
+
+            var dist = Math.abs(elevatorBox.attr('y') - newY)/50;
+            stats['energy'] += dist;
+            $('#energyNum').text(stats['energy']);
+            var rate = 500;
+            var doorsMove = 500;
+            var doorOpen = 800;
+
+            //move passengers
+            $.each(elevator["members"],function(i,v){
+                v["d3Obj"].transition().duration(rate*dist).attr("cy",function(){return Number(d3.select(this).attr("cy")) - Number(elevatorBox.attr('y')) + newY}).ease("linear");
+            })
+            //move elevator
+            elevatorBox.transition().duration(rate*dist).attr("y",newY).ease("linear");
+            elevatorRopeRight.transition().duration(rate*dist).attr("y2",newY).ease("linear");
+            elevatorRopeLeft.transition().duration(rate*dist).attr("y2",newY).ease("linear");
+            elevatorDoor.transition().duration(rate*dist).attr("y",newY+25).ease("linear").each("end",function(){
+                elevatorDoor.transition().duration(doorsMove).attr("height",42).attr("y",newY+4).each("end",function(){
+
+                    //unload passengers
+                    elevator.unloadPassengers((450-newY)/50);
+                    //load passengers
+                    elevator.loadPassengers((450-newY)/50);
+
+                    setTimeout(function(){
+                        elevatorDoor.transition().duration(doorsMove).attr("height",0).attr("y",newY+25).each("end",function(){
+                            dir = "none";
+                            $("#active").children(":first").remove();
+                            $("#sortable").children(":first").remove();
+                            masterQueue.nextMove();
+                        })
+                    },doorOpen);
+                });
+            });
+        }
+
+        var masterQueue = {moveList: []};
+
+
+        masterQueue.addToEnd = function(newY){
+            masterQueue["moveList"].push(newY);
+            
+            $('#sortable').append('<li class="queueEntry" value="'+newY+'" style="background: '+color(newY)+'"> <span><a onclick="$(this).parent().parent().remove();" href="#">&nbsp;X</a>&nbsp; <span class="floorName"> Floor  '+(450 - newY)/50+'</span></span></li>');
+            $( "#sortable" ).sortable( {axis : "y", cancel: ".notSortable"} );
+            $( "#sortable" ).disableSelection();
+            masterQueue.nextMove();
+        }
+
+        masterQueue.nextMove = function(){
+            //update based on queue
+            masterQueue["moveList"] = $.map($('#sortable > li'), function (element){
+              return element.value;
+            });
+
+            if (dir == 'none'){
+                if (masterQueue["moveList"].length == 0){
+                    $("#active").children(":first").remove();
+                    $("#sortable").children(":first").remove();
+                    return; //if there are no current moves, don't move
+                } 
+
+                moveElevator(masterQueue["moveList"][0]);
+                
+                $("#sortable").children(":first").clone().appendTo('#active');
+                $("#sortable").children(":first").hide();
+
+                $("#active").children(":first").css('background','gainsboro');
+                $("#active").children(":first").css('color','black');
+                $("#active").children(":first").css('cursor','not-allowed');
+                $("#active").children(":first").addClass('notSortable');
+                $('#active > li > span > a').remove();
+                masterQueue["moveList"].splice(0, 1); 
+            } else {
+                return;
+            }
+
+        }
+
+        function addPerson(floorStart,floorEnd,autoSelect){
+        if (floorStart == floorEnd) {return};
+        var d3Person = svg.append('circle')
+                .attr("cx",100+16*floors[floorStart].length)
+                .attr("cy",(450-floorStart*50+35))
+                .attr("r",13)
+                .attr("selected", autoSelect)
+                .style({"fill":color(450-floorEnd*50),"stroke": function() {if(autoSelect == 'true'){return 'white'} else 'black'},"stroke-width":"2"})
+                .on("click",function(){
+                	   masterQueue.addToEnd(450-50*floorStart);
+                //     if (d3.select(this).attr("selected")=="false"){
+                //         d3.select(this).style('stroke','white');
+                //         d3.select(this).attr('selected',"true");
+                //     } else {
+                //         d3.select(this).style('stroke','black');
+                //         d3.select(this).attr('selected',"false");
+                //     }
+                    
+                });
+        
+
+        floors[floorStart].push({
+            "floorStart":floorStart,
+            "floorEnd":floorEnd,
+            "d3Obj":d3Person,
+            "time": Date.now()
+        });
+        }
+
+        var elevator = {
+            'members':[],
+            'd3obj':elevatorBox,
+            'map':[[15,25,false],
+            [30,25,false],
+            [45,25,false],
+            [15,11,false],
+            [30,11,false],
+            [45,11,false],
+            [15,-3,false],
+            [30,-3,false],
+            [45,-3,false]]
+        };
+
+        elevator.assignSpace = function(passenger){
+            var newCoords = 0;
+            $.each(elevator['map'],function(i,v){
+                if (v[2] == false){
+                    elevator['map'][i][2] = true;
+                    var k = elevator['members'].push(passenger);
+                    elevator['members'][k-1]['elevatorSpace'] = i;
+                    elevator['map'][i][3] = k - 1;
+                    newCoords = {'cx': v[0],
+                    'cy':Number(passenger["d3Obj"].attr('cy'))-v[1]
+                    };
+                    return false;
+                };
+            });
+
+            if (newCoords == 0){
+                console.log('huh, no space.')
+                return false;
+            }
+            return newCoords;
+        };
+
+        elevator.loadPassengers = function(floorAt){
+            floors[floorAt] = $.grep(floors[floorAt],function(v,i){
+                if (elevator['members'].length==9){
+                    console.log('loadPassengers','elevator is full')
+                    return true;
+                }
+                if (v["d3Obj"].attr("selected")=="true"){
+                    var newCoords = elevator.assignSpace(v);
+                    v["d3Obj"].attr("selected","false");
+                    v["d3Obj"].transition().duration(100).attr({
+                    "cx": newCoords['cx'],
+                    "cy": newCoords['cy'],
+                    "r":5}).style({'stroke':'black','stroke-width':0});
+                    return false;
+
+                } else {
+                    return true;
+                };
+            });
+        };
+
+        elevator.unloadPassengers = function(floorAt){
+            elevator['members'] = $.grep(elevator['members'],function(v,i){
+                if (v["floorEnd"] == floorAt){
+                    v["d3Obj"].transition().duration(400).attr("r",0).each("end",function(){
+                        d3.select(this).remove();
+                        stats['passengerCount'] += 1;
+                        stats['waitTime'] += Date.now() - v["time"];
+                        $('#waitTimeNum').text(Math.round(stats['waitTime']/stats['passengerCount']/10)/100);
+                        $('#passengerCountNum').text(stats['passengerCount']);
+
+                    });
+                    elevator['map'][v['elevatorSpace']][2] = false;
+                    return false;
+                } else {
+                    return true;
+                };
+            });
+        }
+
+        function randomGenAddPerson(){
+            stats['totalpeeps'] += 1;
+            if (stats['totalpeeps'] > 50){return};
+            var startFloor = Math.floor(Math.random()*9)+1;
+            var endFloor = Math.floor(Math.random()*9)+1;
+            while (endFloor == startFloor) {
+                endFloor = Math.floor(Math.random()*9)+1;
+            }
+            addPerson(startFloor,endFloor, 'true');
+        }
+
+        function gameLoop(){
+            if (game) {return}
+            game = true;
+        	//start with 3 people
+            randomGenAddPerson();
+            randomGenAddPerson();
+            randomGenAddPerson();
+            (function loop() {
+                var rand = Math.round(Math.random() * (5000 - 2500)) + 2500;
+                setTimeout(function() {
+                        randomGenAddPerson();
+                        if (stats['passengerCount'] < 50){
+                            loop();
+                        } else {
+                        	try {
+                        		sendData();
+                        	}
+                        	catch (err) {
+                        		//no code here, dropping the ball on the CORS
+                        		console.log(err);
+                        	}
+                            //alert("Congrats, you won the game.");
+                            $( "#modalEnergy" ).text(stats["energy"]);
+                            $( "#modalWait" ).text(Math.round(stats['waitTime']/stats['passengerCount']/10)/100);
+                            $( "#dialog-message" ).dialog( "open" );;
+                        } 
+                }, rand);
+            }());
+        }
+        </script>
+        <script>
+        var reportScores = true;
+        /*
+		This is a static page hosted on github pages. It would be cool to collect data from people playing this game and see how they do-- maybe even long term a crowd sourced elevator algorithm could become a possibility. I want to collect anonymous usage statistics to see how people are doing-- just the # of passengers, average wait time, and energy use. That's what the sendData function does. 
+
+		If you don't want your score sent to me, just open up the console and type in 'reportScores = false;'
+
+        */
+	    function sendData() {
+	    	if (reportScores && (stats['totalpeeps'] != 0)) {
+	        $.ajax({
+	            type: "post",
+	            url: "//forms.brace.io/sunny.m.bala@gmail.com",
+	            data: {"passengers": stats['passengerCount'], "wait" : Math.round(stats['waitTime']/stats['passengerCount']/10)/100, "energy": stats["energy"], "totalpeeps": stats["totalpeeps"]},
+	            success: function (data) {
+	                //don't do anything
+
+	            }
+	        });
+	    	}
+	    }
+
+	    //window.onbeforeunload = sendData();
+
+	    $(window).unload(function(){
+		    if (reportScores && (stats['totalpeeps'] != 0)) {
+	        $.ajax({
+	            type: "post",
+	            url: "//forms.brace.io/sunny.m.bala@gmail.com",
+	            data: {"passengers": stats['passengerCount'], "wait" : Math.round(stats['waitTime']/stats['passengerCount']/10)/100, "energy": stats["energy"], "totalpeeps": stats["totalpeeps"]},
+	            success: function (data) {
+	                //don't do anything
+
+	            }
+	        });
+	    	}
+		});
+
+	    $(function() {
+		    $( "#dialog-message" ).dialog({
+		      modal: true,
+		      autoOpen: false,
+		      buttons: {
+		        Ok: function() {
+		          $( this ).dialog( "close" );
+		          $("#startButton").hide();
+		          $("#restartButton").show();
+		        }
+		      }
+		    });
+		  });
+        </script>
+        <div id="dialog-message" title="You Did It!" style="display: none;">
+		  <p>
+		    You served 50 passengers with an energy consumption of <span id="modalEnergy"> </span> and average wait time of <span id="modalWait"> </span>. 
+		    <br> <br>
+		    If you can think of a good reason to, feel free to share this and see how efficient your friends are.
+		    <ul class="share-buttons">
+				<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsandeepba.com%2Fprojects%2Felevator%2F&t=The%20Elevator%20Game" target="_blank"><img src="images/flat_web_icon_set/color/Facebook.png"></a></li>
+				<li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fsandeepba.com%2Fprojects%2Felevator%2F&text=The%20Elevator%20Game:%20http%3A%2F%2Fsandeepba.com%2Fprojects%2Felevator%2F" target="_blank" title="Tweet"><img src="images/flat_web_icon_set/color/Twitter.png"></a></li>
+				<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fsandeepba.com%2Fprojects%2Felevator%2F" target="_blank" title="Share on Google+"><img src="images/flat_web_icon_set/color/Google+.png"></a></li>
+				<li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fsandeepba.com%2Fprojects%2Felevator%2F&title=The%20Elevator%20Game" target="_blank" title="Submit to Reddit"><img src="images/flat_web_icon_set/color/Reddit.png"></a></li>
+			</ul>
+		  </p>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+pygments: true
+permalink: /:title
+
+url:
+baseurl:
+
+redcarpet:
+  extensions: [strikethrough, tables]
