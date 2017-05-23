@@ -23,7 +23,7 @@ So theoretically, with a teacher effectively randomizing answer choices, your st
 Let's make our teacher generate answer keys using "realistic" randomness assumptions. Suppose the answers are random but with a twist -- the teacher will never make more than 3 answers in a row as the same choice. So what's your best play now? I re-ran a similar simulation. This time, I had tried strategies:
 
 * **Always C** - self explanatory 
-* **Pseudorandom** - guessing randomly, but with the same rules as the teacher -- only 3 answer in a row ever
+* **Pseudorandom** - guessing randomly, but with the same rules as the teacher -- only 3 of the same answers in a row ever
 * **Random** - guessing totally randomly
 
 results below.
@@ -37,5 +37,3 @@ results below.
 <div style="text-align: center;"><img src="https://raw.githubusercontent.com/sandeepba/sandeepba.github.com/master/assets/2q2rep.png" /></div>
 
 As you can see, you can expect to do equally well with any of these strategies. However, if you're feeling lucky, guessing randomly or guessing pseudorandomly gives you a better chance to get a higher score than always guessing C would. Unfortunately, you're also just as likely to get an equally low score if luck's not going your way. So what's the verdict? **In the real (pseudorandom) world, always guessing C is the safest option. In the perfectly random world, it doesn't matter which strategy you use.**  If you want to expose yourself to a little more risk (a chance for a slightly higher/lower score than 25%), you can guess randomly. However, the more answer choices you have and the more actually random the test answer key is, the less it ends up mattering, as the answer key will look more and more like the perfectly random case where the distributions are the same. 
-
-<div style="text-align: center;"><img src="https://45.media.tumblr.com/d2bb454917b9ffacb793cb478a7641ad/tumblr_mu5i2x9igm1r49l3lo1_500.gif" /></div>
