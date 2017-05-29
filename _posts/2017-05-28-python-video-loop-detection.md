@@ -8,7 +8,11 @@ comments: true
 
 I was scrolling through YouTube the other day and saw the thumbnail of a video that was going viral. In it, a guy claimed he was going to slap himself in the face for 24 hours. The video was, in fact 24 hours. I skipped around through the video and sure enough, it was just him slapping himself. Lots of the comments claimed that the video was fake. I thought so too, but I wanted to know for sure. 
 
+
+
 <iframe width="600" height="400" src="https://www.youtube.com/embed/N2VwIfi6LoY?ecver=1" frameborder="0" allowfullscreen></iframe>
+
+
 
 ## The Plan
 
