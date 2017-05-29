@@ -4,13 +4,13 @@ title: Detecting Fake Videos with Python
 comments: true
 ---
 
-**Someone on the internet uploaded a video where he slapped himself for 24 hours. Did he actually?**
+**Someone on the internet uploaded a video where he slapped himself for 24 hours. Did he actually do it?**
 
-I was scrolling through YouTube the other day and saw the thumbnail of a video that was going viral. In it, a guy claimed he was going to slap himself in the face for 24 hours. The video was, in fact 24 hours. I skipped around through the video and sure enough, it was just him slapping himself. Lots of the comments claimed that the video was fake. I thought so too, but I wanted to know for sure. 
+I was scrolling through YouTube the other day and saw a video that was going viral. In it, a guy claimed he was going to slap himself in the face for 24 hours. The video was a full 24 hours. I skipped around through the video and, sure enough, it was just him slapping himself. Lots of the comments claimed that the video was fake. I thought so too, but I wanted to know for sure. 
 
 
 
-<iframe width="600" height="400" src="https://www.youtube.com/embed/N2VwIfi6LoY?ecver=1" frameborder="0" allowfullscreen></iframe>
+<iframe width="300" height="200" src="https://www.youtube.com/embed/N2VwIfi6LoY?ecver=1" frameborder="0" allowfullscreen></iframe>
 
 
 
