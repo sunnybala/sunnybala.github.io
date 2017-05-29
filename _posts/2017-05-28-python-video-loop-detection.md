@@ -6,11 +6,9 @@ comments: true
 
 **Someone on the internet uploaded a video where he slapped himself for 24 hours. Did he actually?**
 
-I was scrolling through YouTube the other day and saw the thumbnail of a video that was going viral. In it, a guy claimed he was going to slap himself in the face for 24 hours. The video was, in fact 24 hours. I skipped around through the video and sure enough, it was just him slapping himself. 
+I was scrolling through YouTube the other day and saw the thumbnail of a video that was going viral. In it, a guy claimed he was going to slap himself in the face for 24 hours. The video was, in fact 24 hours. I skipped around through the video and sure enough, it was just him slapping himself. Lots of the comments claimed that the video was fake. I thought so too, but I wanted to know for sure. 
 
 <iframe width="600" height="400" src="https://www.youtube.com/embed/N2VwIfi6LoY?ecver=1" frameborder="0" allowfullscreen></iframe>
-
-Lots of the comments claimed that the video was fake. I thought so too, but I wanted to know for sure. 
 
 ## The Plan
 
@@ -20,31 +18,18 @@ Write a program to detect if there are any loops in the video. I hadn't done any
 
 ### Diving In
 
+<div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/frame-match.png" /></div>
+
 ### Deeper Dive
 
-The program worked the way it was supposed to -- it identified identical frames and let me know that the video was looping. However, I was suspicious that it wasn't getting all the 
+The program worked the way it was supposed to -- it identified identical frames and let me know that the video was looping. However, I was suspicious that it wasn't getting all the frames that matched.
+
+<div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/identical-prediff.png" /></div>
+
+We can subtract these two frames from each other to figure out what's different. The subtraction works pixel by pixel.
+
+<div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/identical.png" /></div>
+
+#### ? ? ?
 
 
-<div style="text-align: center;"><img src="https://raw.githubusercontent.com/sandeepba/sandeepba.github.com/master/assets/always-c-sim.gif" /></div>
-
-The reasoning is that if the teacher's answer key is truly picked randomly, [C,C,C,C,C] is just as likely as any other specific order of choices like [D,B,B,C,A]. Your chance of getting 100% with putting down all C is exactly the same as the chance of getting 100% when you pick random answers -- it just "feels" less likely that a teacher would give an exam with a 100 C's in a row rather than any specific other combination of letters. It's similar to the  question, which is more likely from 3 coin flips: HHH or HTH? All 8 possible outcomes are equally likely (HHH, THH, HTH, HHT, HTT, THT, TTH, TTT). While it's true that there is only one with 3 heads but 3 outcomes with 2 heads and 1 tails, any specific arrangement of those 2 heads and 1 tails (HHT, HTH, THH) has an equal chance of coming up as (HHH).
-
-So theoretically, with a teacher effectively randomizing answer choices, your strategy for dealing with questions you don't know doesn't matter (between guessing and always choosing the same letter). Realistically, most teachers won't ever make all answers C. Someone designing a test might glance over the answer key, see 7 C's in a row, and think to themselves, *hmm, this isn't random enough. Let's mix things up by making a few of them different letters*. Does this change things? 
-
-Let's make our teacher generate answer keys using "realistic" randomness assumptions. Suppose the answers are random but with a twist -- the teacher will never make more than 3 answers in a row as the same choice. So what's your best play now? I re-ran a similar simulation. This time, I had tried strategies:
-
-* **Always C** - self explanatory 
-* **Pseudorandom** - guessing randomly, but with the same rules as the teacher -- only 3 of the same answers in a row ever
-* **Random** - guessing totally randomly
-
-results below.
-
-<div style="text-align: center;"><img src="https://raw.githubusercontent.com/sandeepba/sandeepba.github.com/master/assets/4q2rep.png" /></div>
-
- Neat! All 3 strategies have the same mean performance, so you can expect to get 25% right in all 3 cases. However, the "always guess C" strategy clearly has a skinnier distribution. In this sense, it's "safer" than the other two strategies, as you are "guaranteed" to get pretty close to 25%. In comparison, the other two random strategies have more variation in the scores you could get -- you might get a 20% or 30% more often than you would get with just guessing C always. The two random strategies are pretty close to each other -- are they actually the same? 
-
- To get some separation, we can push the test to a sort of extreme case -- 2 choices (for example, true / false), with a maximum of 2 of the same answer in a row. While a max of 2 of the same answer in a row might be a little unrealistic, it does lead to some more clarity in the way the strategies differ. Note here -- I'm keeping the "Always C" out of convenience as a description of the constant strategy, but with 2 choices there isn't necessarily a C to pick! 
-
-<div style="text-align: center;"><img src="https://raw.githubusercontent.com/sandeepba/sandeepba.github.com/master/assets/2q2rep.png" /></div>
-
-As you can see, you can expect to do equally well with any of these strategies. However, if you're feeling lucky, guessing randomly or guessing pseudorandomly gives you a better chance to get a higher score than always guessing C would. Unfortunately, you're also just as likely to get an equally low score if luck's not going your way. So what's the verdict? **In the real (pseudorandom) world, always guessing C is the safest option. In the perfectly random world, it doesn't matter which strategy you use.**  If you want to expose yourself to a little more risk (a chance for a slightly higher/lower score than 25%), you can guess randomly. However, the more answer choices you have and the more actually random the test answer key is, the less it ends up mattering, as the answer key will look more and more like the perfectly random case where the distributions are the same. 
