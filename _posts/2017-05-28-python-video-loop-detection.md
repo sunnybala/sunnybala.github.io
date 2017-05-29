@@ -4,13 +4,12 @@ title: Detecting Fake Videos with Python
 comments: true
 ---
 
-**"You're taking a test and you don't know the answer to the last 5 questions. Do you choose C for all of them or do you guess randomly?"**
+**Someone on the internet uploaded a video where he slapped himself for 24 hours. Did he actually?**
 
-Statistically, this line never seems to work to start conversations at bars. Luckily, your chances of getting the problems on the test correct are a little better. Does always picking C (equivalently, always picking A/B/D) vs guessing randomly even make a difference? It's a simple enough question. In discussions with several friends, most people fall into one of two camps. Imagine you had 8 questions left, with choices A,B,C, and D. Consider the following two viewpoints.
-	
-1. It doesn't matter either way -- your chance of getting any problem right in either case is just 25% for each problem. Both strategies have exactly the same results.
+I was scrolling through YouTube the other day and saw the thumbnail of a video that was going viral. In it, a guy claimed he was going to slap himself in the face for 24 hours. The video was, in fact 24 hours. I skipped around through the video and sure enough, it was just him slapping himself. 
 
-2. While you have a 25% chance of getting any problem right in both cases, the strategy of picking C every single time has lower variance. That is, if you picked randomly, you'll have a chance to get a 50% on the test (though it's exactly the same chance that you'll get a 0% on the test). If you get really lucky, you have a chance to get 100%! Meanwhile, putting down C always you can expect to get around 25% of the questions right pretty consistently. In that sense, always picking C is less risky.
+<iframe width="600" height="400" src="https://www.youtube.com/embed/N2VwIfi6LoY?ecver=1" frameborder="0" allowfullscreen></iframe>
+
 
 I <a href="https://github.com/sandeepba/stats-busters/blob/master/always-pick-c/always-pick-c.py"> simulated </a> trying both the "always pick C" and the "guess randomly" approaches just to confirm. Over 100000 tests, with 100 questions each and 4 choices, it turns out that camp #1 is absolutely right -- it doesn't matter. The distributions are shown below (the purple is the overlap). Since the whole graph is purple, it appears that the distributions are actually identical. 
 
