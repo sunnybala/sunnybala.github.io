@@ -10,6 +10,7 @@ I was scrolling through YouTube the other day and saw the thumbnail of a video t
 
 <iframe width="600" height="400" src="https://www.youtube.com/embed/N2VwIfi6LoY?ecver=1" frameborder="0" allowfullscreen></iframe>
 
+Lots of the comments claimed that the video was fake. 
 
 I <a href="https://github.com/sandeepba/stats-busters/blob/master/always-pick-c/always-pick-c.py"> simulated </a> trying both the "always pick C" and the "guess randomly" approaches just to confirm. Over 100000 tests, with 100 questions each and 4 choices, it turns out that camp #1 is absolutely right -- it doesn't matter. The distributions are shown below (the purple is the overlap). Since the whole graph is purple, it appears that the distributions are actually identical. 
 
