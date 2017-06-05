@@ -61,7 +61,12 @@ def find_duplicates():
 
 {% endhighlight %}
 
-Running this code took about an hour on my macbook pro. 
+Running this code took about an hour on my macbook pro. Let's take a look at the results:
+
+<div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/matches.png" /></div>
+
+So 
+
 
 <div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/frame-match.png" /></div>
 
