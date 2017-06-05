@@ -6,8 +6,8 @@ comments: true
 
 <style>
 img {
-	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
 </style>
 
@@ -76,11 +76,11 @@ Okay, neat. So according to this, frame 5928 is the same as frame 2048454, frame
 
 <div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/frame-match.png" /></div>
 
-Perfect. So ** the video is definitely fake. ** However, the number of matches seems super sus -- it's really low. Is it really the case that there's only ~ 25 identical frames? That's hardly 1 second out of the full 24 hour video. Let's take a closer look!
+Perfect. So **the video is definitely fake.** However, the number of matches seems super *sus* -- it's really low. Is it really the case that there's only ~ 25 identical frames? That's hardly 1 second out of the full 24 hour video. Let's take a closer look!
 
 ### The Plot Thickens
 
-The program worked the way it was supposed to -- it identified identical frames and let me know that the video was looping. Let's check what the frames look like 20 seconds after the two images above (frame 5936 + 600 and frame 2048462 + 600). 
+The program worked the way it was supposed to -- it identified identical frames and let me know that the video was looping. Let's check what the frames look like 2 seconds after the two images above (frame 5936 + 60 and frame 2048462 + 60). 
 
 <div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/identical-prediff.png" /></div>
 
@@ -90,6 +90,11 @@ Wait ... these look identical! And yet they didn't flag as a match?! We can subt
 
 Great, we've made some cool glitch art. What actually appears to be happening is that these are just a bunch of artifacts in the frame coming from the fact that the video is compressed. Because of the lossy compression, two frames that originally were identical might get a little distored by this noise and will no longer be numerically the same (though they are visually).
 
+The **hash** function will turn an image (an array) into an integer. If two images are exactly the same, the hash function will give us the same integer. If the two images are different, we'll get a different integer. The behavior we actually want is that that if two images are only *slightly* different we'll get the same exact integer.
+
+The Introducing **perceptual hashing**. Unlike normal hashing or cryptographic hashing, inputs that are close together will come out of the hash being identical. A similar approach is apparently used by reverse image searching websites, which just crawl the web and hash images they come across. Since a given picture exists at ton of resolutions and croppings all over the internet, it's computationally conveneint to check for other things that have the same hash.  
+
+The ImageHash library implements several popular image hashing algorithms. Let's try swapping it in to the original code. 
 
 #### ? ? ?
 
