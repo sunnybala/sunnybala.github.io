@@ -12,11 +12,48 @@ I was scrolling through YouTube the other day and saw a video that was going vir
 
 ## The Plan
 
-Write a program to detect if there are any loops in the video. I hadn't done any video processing with Python before so it seemed like it could be a neat. 
+**Write a program to detect if there are any loops in the video.** I hadn't done any video processing with Python before so it seemed like it could be a neat. 
 
 ---
 
 ### Diving In
+
+Watching a video is like watching a really fast flipbook of pictures. Conveniently, that's also what it looks like when reading the data of the video using python. Each "picture" that we see is one frame of the video. When this particular video plays, it's playing in 30 frames per second. 
+
+In data, each frame is a giant array. This array tells us the color of each pixel at every location (using RGB).  We want to see if any frames appear more than once in the video -- one way to do that would be just counting the number of times we see each frame. 
+
+{% highlight python %}
+
+def find_duplicates():
+	# load in the video file
+	filename = 'video.mp4'
+	vid = imageio.get_reader(filename,  'ffmpeg')
+	all_frames = vid.get_length()
+
+	# we'll store the info on repeated frames here
+	seen_frames = {}
+	duplicate_frames = {}
+
+	for x in range(all_frames):
+		# get frame x
+		frame = vid.get_data(x)
+
+		# hash our frame
+		hashed = hash(frame.tostring())
+		
+		if seen_frames.get( hashed, None):
+			# if we've seen this frame before, add it to the list of frames 
+			# that all have the same hashed value in duplicate_frames
+			duplicate_frames[hashed].append(x)
+		else:
+			# if it's the first time seeing a frame, put it in seen_frames
+			seen_frames[hashed] = x
+			duplicate_frames[hashed] = [x]
+
+	# return a list of lists of duplicate frames
+	return [duplicate_frames[x] for x in duplicate_frames if len(duplicate_frames[x]) > 1]
+
+{% endhighlight %}
 
 <div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/frame-match.png" /></div>
 
