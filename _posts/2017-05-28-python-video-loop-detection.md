@@ -42,11 +42,13 @@ def find_duplicates():
 		hashed = hash(frame.tostring())
 		
 		if seen_frames.get( hashed, None):
-			# if we've seen this frame before, add it to the list of frames 
-			# that all have the same hashed value in dup_frames
+			# if we've seen this frame before, add it to the 
+			# list of frames that all have the same 
+			# hashed value in dup_frames
 			dup_frames[hashed].append(x)
 		else:
-			# if it's the first time seeing a frame, put it in seen_frames
+			# if it's the first time seeing a frame,
+			# put it in seen_frames
 			seen_frames[hashed] = x
 			dup_frames[hashed] = [x]
 
