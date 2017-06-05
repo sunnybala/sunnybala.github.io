@@ -32,7 +32,7 @@ def find_duplicates():
 
 	# we'll store the info on repeated frames here
 	seen_frames = {}
-	duplicate_frames = {}
+	dup_frames = {}
 
 	for x in range(all_frames):
 		# get frame x
@@ -43,15 +43,15 @@ def find_duplicates():
 		
 		if seen_frames.get( hashed, None):
 			# if we've seen this frame before, add it to the list of frames 
-			# that all have the same hashed value in duplicate_frames
-			duplicate_frames[hashed].append(x)
+			# that all have the same hashed value in dup_frames
+			dup_frames[hashed].append(x)
 		else:
 			# if it's the first time seeing a frame, put it in seen_frames
 			seen_frames[hashed] = x
-			duplicate_frames[hashed] = [x]
+			dup_frames[hashed] = [x]
 
 	# return a list of lists of duplicate frames
-	return [duplicate_frames[x] for x in duplicate_frames if len(duplicate_frames[x]) > 1]
+	return [dup_frames[x] for x in dup_frames if len(dup_frames[x]) > 1]
 
 {% endhighlight %}
 
