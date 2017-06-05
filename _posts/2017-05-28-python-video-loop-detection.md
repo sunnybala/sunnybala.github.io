@@ -4,6 +4,13 @@ title: Detecting Fake Videos with Python
 comments: true
 ---
 
+<style>
+img {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+</style>
+
 **Someone on the internet uploaded a video where he slapped himself for 24 hours. Did he actually do it?**
 
 I was scrolling through YouTube the other day and saw a video that was going viral. In it, a guy claimed he was going to slap himself in the face for 24 hours. The video was a full 24 hours. I skipped around through the video and, sure enough, it was just him slapping himself. Lots of the comments claimed that the video was fake. I thought so too, but I wanted to know for sure. 
@@ -14,17 +21,17 @@ I was scrolling through YouTube the other day and saw a video that was going vir
 
 **Write a program to detect if there are any loops in the video.** I hadn't done any video processing with Python before so it seemed like it could be a neat. 
 
----
+## Diving In
 
 Watching a video is like watching a really fast flipbook of pictures. Conveniently, that's also what it looks like when reading the data of the video using python. Each "picture" that we see is one frame of the video. When this particular video plays, it's playing in 30 frames per second. 
 
-In data, each frame is a giant array. This array tells us the color of each pixel at every location (using RGB).  We want to see if any frames appear more than once in the video -- one way to do that would be just counting the number of times we see each frame. 
+In data, each frame is a giant array. This array tells us the color of each pixel at every location by specifying the amount of red/green/blue to mix (RGB).  We want to see if any frames appear more than once in the video -- one way to do that would be just counting the number of times we see each frame. 
 
 I did that counting using two dictionaries. One keeps track of any frames I've seen already. The other keeps track of groups of frames that are all exactly the same. As I go through the frames one by one, I first check if I've seen the image before. If I haven't, I'll add it to my dictionary of frames I've seen (seen_frames below). If I have seen that frame before, I'll add it to the other dictionary (dup_frames) in a list along with all the other frames that are exactly like it.
 
-(More info on the code: typically, when doing a counter like this or using the collections.counter object, you'll be hashing the values that you're counting under the hood. Unfortunately, the video frame arrays are not hashable -- to get around this, I converted the arrays to strings before hashing and it worked like a charm. )
+(More info on the code: typically, when doing a counter like this or using the collections.counter object, you'll be hashing the values that you're counting under the hood. Unfortunately, the video frame arrays are not hashable -- to get around this, I converted the arrays to strings before hashing and it worked like a charm.)
 
-Code below:
+Code:
 
 {% highlight python %}
 
