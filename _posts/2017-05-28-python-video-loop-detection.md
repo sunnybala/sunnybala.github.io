@@ -16,13 +16,13 @@ I was scrolling through YouTube the other day and saw a video that was going vir
 
 ---
 
-### Diving In
-
 Watching a video is like watching a really fast flipbook of pictures. Conveniently, that's also what it looks like when reading the data of the video using python. Each "picture" that we see is one frame of the video. When this particular video plays, it's playing in 30 frames per second. 
 
 In data, each frame is a giant array. This array tells us the color of each pixel at every location (using RGB).  We want to see if any frames appear more than once in the video -- one way to do that would be just counting the number of times we see each frame. 
 
-I did that counting using two dictionaries. One keeps track of any frames I've seen already. The other keeps track of groups of frames that are all exactly the same. Typically, when doing a counter like this (or using the collections.counter object), you'll hash the values that you're counting. Unfortunately, the video frame arrays are not hashable -- to get around this, I converted the arrays to strings before hashing and it worked like a charm.
+I did that counting using two dictionaries. One keeps track of any frames I've seen already. The other keeps track of groups of frames that are all exactly the same. As I go through the frames one by one, I first check if I've seen the image before. If I haven't, I'll add it to my dictionary of frames I've seen (seen_frames below). If I have seen that frame before, I'll add it to the other dictionary (dup_frames) in a list along with all the other frames that are exactly like it.
+
+(More info on the code: typically, when doing a counter like this or using the collections.counter object, you'll be hashing the values that you're counting under the hood. Unfortunately, the video frame arrays are not hashable -- to get around this, I converted the arrays to strings before hashing and it worked like a charm. )
 
 Code below:
 
@@ -63,22 +63,26 @@ def find_duplicates():
 
 Running this code took about an hour on my macbook pro. Let's take a look at the results:
 
-<div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/matches.png" /></div>
+<div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/matches.png" height="450px"/></div>
 
-So 
-
+Okay, neat. So according to this, frame 5928 is the same as frame 2048454, frame 5936 is the same as 2048462, and so on. Let's visually confirm.
 
 <div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/frame-match.png" /></div>
 
-### Deeper Dive
+Perfect. So ** the video is definitely fake. ** However, the number of matches seems super sus -- it's really low. Is it really the case that there's only ~ 25 identical frames? That's hardly 1 second out of the full 24 hour video. Let's take a closer look!
 
-The program worked the way it was supposed to -- it identified identical frames and let me know that the video was looping. However, I was suspicious that it wasn't getting all the frames that matched.
+### The Plot Thickens
+
+The program worked the way it was supposed to -- it identified identical frames and let me know that the video was looping. Let's check what the frames look like 20 seconds after the two images above (frame 5936 + 600 and frame 2048462 + 600). 
 
 <div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/identical-prediff.png" /></div>
 
-We can subtract these two frames from each other to figure out what's different. The subtraction works pixel by pixel.
+Wait ... these look identical! And yet they didn't flag as a match?! We can subtract these two frames from each other to figure out what's different. The subtraction works pixel by pixel on the red/green/blue values.
 
 <div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/identical.png" /></div>
+
+Great, we've made some cool glitch art. What actually appears to be happening is that these are just a bunch of artifacts in the frame coming from the fact that the video is compressed. Because of the lossy compression, two frames that originally were identical might get a little distored by this noise and will no longer be numerically the same (though they are visually).
+
 
 #### ? ? ?
 
