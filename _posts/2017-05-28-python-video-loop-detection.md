@@ -22,6 +22,10 @@ Watching a video is like watching a really fast flipbook of pictures. Convenient
 
 In data, each frame is a giant array. This array tells us the color of each pixel at every location (using RGB).  We want to see if any frames appear more than once in the video -- one way to do that would be just counting the number of times we see each frame. 
 
+I did that counting using two dictionaries. One keeps track of any frames I've seen already. The other keeps track of groups of frames that are all exactly the same. Typically, when doing a counter like this (or using the collections.counter object), you'll hash the values that you're counting. Unfortunately, the video frame arrays are not hashable -- to get around this, I converted the arrays to strings before hashing and it worked like a charm.
+
+Code below:
+
 {% highlight python %}
 
 def find_duplicates():
@@ -56,6 +60,8 @@ def find_duplicates():
 	return [dup_frames[x] for x in dup_frames if len(dup_frames[x]) > 1]
 
 {% endhighlight %}
+
+Running this code took about an hour on my macbook pro. 
 
 <div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/frame-match.png" /></div>
 
