@@ -109,15 +109,15 @@ Below, I show the results of the ahash process at 8x8 and 64x64 resolution. The 
 <div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/ahash-resolution.png" /></div>
 
 To get an idea of what resolution fits our situation best, I tried finding matches over a range of resolutions for two sections of the video that were similar. The matches returned come in the following output:
-..* [8,108]
-..* [9,109]
-..* [10,11,110,111]
++ [8,108]
++ [9,109]
++ [10,11,110,111]
 
 The interpretation of the above are that frames 8 and 108 are the same as each other. Frames 9 and 109 are the same as each other but different than 8/108. Frames 10,11,110, and 111 are different from all other frames but the same as each other. This will happen because the algorithm isn't perfect -- occasionally it'll get confused and think that two adjacent frames are identical. To track the trade offs, we can look at a few metrics:
 
-..* How many buckets of matches are there? Above, there are 3.
-..* What is the average number of frames in each bucket? That average is (2+2+4)/3 = 2.7.
-..* What is the most frames in any bucket? 4
++ How many buckets of matches are there? Above, there are 3.
++ What is the average number of frames in each bucket? That average is (2+2+4)/3 = 2.7.
++ What is the most frames in any bucket? 4
 
 The goal here is to get a high number of buckets (the first metric) with a low number of items per bucket (average or worst case). Theoretically, since the sections of the video I was looking at had 1 loop, there should only be 2 frames per bucket. 
 
