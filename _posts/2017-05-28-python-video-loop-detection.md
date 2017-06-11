@@ -90,11 +90,43 @@ Wait ... these look identical! And yet they didn't flag as a match?! We can subt
 
 Great, we've made some cool glitch art. What actually appears to be happening is that these are just a bunch of artifacts in the frame coming from the fact that the video is compressed. Because of the lossy compression, two frames that originally were identical might get a little distored by this noise and will no longer be numerically the same (though they are visually).
 
-The **hash** function will turn an image (an array) into an integer. If two images are exactly the same, the hash function will give us the same integer. If the two images are different, we'll get a different integer. The behavior we actually want is that that if two images are only *slightly* different we'll get the same exact integer.
+Above, when I stored the data in dictionaries, I hashed each image. The **hash** function will turn an image (an array) into an integer. If two images are exactly the same, the hash function will give us the same integer. If the two images are different, we'll get a different integer. The behavior we actually want is that that if two images are only *slightly* different we'll get the same exact integer.
 
-The Introducing **perceptual hashing**. Unlike normal hashing or cryptographic hashing, inputs that are close together will come out of the hash being identical. A similar approach is apparently used by reverse image searching websites, which just crawl the web and hash images they come across. Since a given picture exists at ton of resolutions and croppings all over the internet, it's computationally conveneint to check for other things that have the same hash.  
+## Perceptual Hashing
+There's a few different kinds of hashing that each have special use cases. Unlike other kinds of hashing, inputs that are close together will come out of the hash being identical. A similar approach is apparently used by reverse image searching websites, which just crawl the web and hash images they come across. Since a given picture exists at ton of resolutions and croppings all over the internet, it's computationally convenient to check for other things that have the same hash.
 
-The ImageHash library implements several popular image hashing algorithms. Let's try swapping it in to the original code. 
+However, there's some new wrinkles because we aren't exactly dealing with images, but instead a series of images each one being 1/30th of a second apart. This means that our hash function needs to be:
+
+..* relaxed enough that a compressed and not compressed image both hash to the same number
+..* sensitive enough that a frame and the one right before it hash to different numbers
+
+This might be tricky.
+
+The specific hashing algorithm I'm going to try using is called average hash (ahash). There's more information available online, but the general process is that it reduces the image resolution, turns it to grayscale, and then hashes it. By reducing the resolution, we can potentially remove the effects of the noise. However, we run the risk that adjacent frames get flagged as duplicates because of how close they are to each other. One way that can play around with this trade-off by adjusting the resolution.
+
+Below, I show the results of the ahash process at 8x8 and 64x64 resolution. The 8x8 looks like it downsamples too much -- we lose so much information that it seems like most of the images will look the same at 8x8. At 64x64, it looks not so different than the original - it's possible that it may not be different enough to overcome the compression noise. 
+
+<div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/ahash-resolution.png" /></div>
+
+To get an idea of what resolution fits our situation best, I tried finding matches over a range of resolutions for two sections of the video that were similar. The matches returned come in the following output:
+..*[8,108]
+..*[9,109]
+..*[10,11,110,111]
+
+The interpretation of the above are that frames 8 and 108 are the same as each other. Frames 9 and 109 are the same as each other but different than 8/108. Frames 10,11,110, and 111 are different from all other frames but the same as each other. This will happen because the algorithm isn't perfect -- occasionally it'll get confused and think that two adjacent frames are identical. To track the trade offs, we can look at a few metrics:
+
+..* How many buckets of matches are there? Above, there are 3.
+..* What is the average number of frames in each bucket? That average is (2+2+4)/3 = 2.7.
+..* What is the most frames in any bucket? 4
+
+The goal here is to get a high number of buckets (the first metric) with a low number of items per bucket (average or worst case). Theoretically, since the sections of the video I was looking at had 1 loop, there should only be 2 frames per bucket. 
+
+<div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/param-selection.png" /></div>
+
+Okay, looks like 64 was too extreme -- we barely have any buckets at the point. On the other hand, there's an explosion in the bucket side towards the left side of the graph where all frames are detected as duplicates. The sweet spot seems to be around the peak of # buckets at 20 or so. It seems like there's something weird about the data point at 20 frames based on the max bucket size line. There's only so much I'm willing to do to disprove an internet video, so let's go with 24 for the resolution of the hash. 
+
+I replaced the hash function in the original one with a call to the ahash function and re-ran the analysis.
+
 
 #### ? ? ?
 
