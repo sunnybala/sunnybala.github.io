@@ -97,8 +97,8 @@ There's a few different kinds of hashing that each have special use cases. Unlik
 
 However, there's some new wrinkles because we aren't exactly dealing with images, but instead a series of images each one being 1/30th of a second apart. This means that our hash function needs to be:
 
-..* relaxed enough that a compressed and not compressed image both hash to the same number
-..* sensitive enough that a frame and the one right before it hash to different numbers
++ relaxed enough that a compressed and not compressed image both hash to the same number
++ sensitive enough that a frame and the one right before it hash to different numbers
 
 This might be tricky.
 
