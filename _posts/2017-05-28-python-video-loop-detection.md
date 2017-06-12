@@ -103,9 +103,9 @@ However, for us there's some new wrinkles because we aren't exactly dealing with
 
 This might be tricky.
 
-### Hashing Out Parameter Selection
+#### Hashing Out aHash Parameter Selection
 
-The specific hashing algorithm I'm going to try using is called average hash (ahash). There's more information available <a href="https://www.safaribooksonline.com/blog/2013/11/26/image-hashing-with-python/"> online </a>, but the general process is that it reduces the image resolution, turns it to grayscale, and then hashes it. By reducing the resolution, we can potentially remove the effects of the noise. However, we run the risk that adjacent frames get flagged as duplicates because of how close they are to each other. One way that can play around with this trade-off by adjusting the resolution.
+The specific hashing algorithm I'm going to try using is called average hash (aHash). There's more information available <a href="https://www.safaribooksonline.com/blog/2013/11/26/image-hashing-with-python/"> online </a>, but the general process is that it reduces the image resolution, turns it to grayscale, and then hashes it. By reducing the resolution, we can potentially remove the effects of the noise. However, we run the risk that adjacent frames get flagged as duplicates because of how close they are to each other. One way that can play around with this trade-off by adjusting the resolution.
 
 Below, I show the results of the ahash process at 8x8 and 64x64 resolution. The 8x8 looks like it downsamples too much -- we lose so much information that it seems like most of the images will look the same at 8x8. At 64x64, it looks not so different than the original - it's possible that it may not be different enough to overcome the compression noise. 
 
