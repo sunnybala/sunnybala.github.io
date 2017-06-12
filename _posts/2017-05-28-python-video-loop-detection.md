@@ -11,11 +11,12 @@ img {
 }
 </style>
 
-**Someone on the internet uploaded a video where he slapped himself for 24 hours. Did he actually do it?**
+**Someone on the internet uploaded a video where he slapped himself for 24 hours. Did he actually do it?** <a href=""> No. <a/> 
 
 I was scrolling through YouTube the other day and saw a video that was going viral. In it, a guy claimed he was going to slap himself in the face for 24 hours. The video was a full 24 hours. I skipped around through the video and, sure enough, it was just him slapping himself. Lots of the comments claimed that the video was fake. I thought so too, but I wanted to know for sure. 
 
 <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY"> <img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/slapping-preview.png" /></a>
+
 
 ## The Plan
 
@@ -88,16 +89,16 @@ Wait ... these look identical! And yet they didn't flag as a match?! We can subt
 
 <div style="text-align: center;"><img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/identical.png" /></div>
 
-Great, we've made some cool glitch art. What actually appears to be happening is that these are just a bunch of artifacts in the frame coming from the fact that the video is compressed. Because of the lossy compression, two frames that originally were identical might get a little distored by this noise and will no longer be numerically the same (though they are visually).
+Great, we've made some cool glitch art! What actually appears to be happening is that these are just a bunch of differences in the frame coming from the fact that the video is compressed. Because of the compression, two frames that originally were identical might get a little distorted by this noise and will no longer be numerically the same (though they are visually).
 
 Above, when I stored the data in dictionaries, I hashed each image. The **hash** function will turn an image (an array) into an integer. If two images are exactly the same, the hash function will give us the same integer. If the two images are different, we'll get a different integer. The behavior we actually want is that that if two images are only *slightly* different we'll get the same exact integer.
 
 ## Perceptual Hashing
-There's a few different kinds of hashing that each have special use cases. Unlike other kinds of hashing, inputs that are close together will come out of the hash being identical. A similar approach is apparently used by reverse image searching websites, which just crawl the web and hash images they come across. Since a given picture exists at ton of resolutions and croppings all over the internet, it's computationally convenient to check for other things that have the same hash.
+There's a few different kinds of hashing that each have special use cases. What we'll be looking at here is **perceptual hashing.** Unlike other kinds of hashing, inputs that are close together will come out of the hash being identical. A similar approach is apparently used by reverse image searching websites, which just crawl the web and hash images they come across. Since a given picture exists at ton of resolutions and croppings all over the internet, it's computationally convenient to check for other things that have the same hash.
 
 However, there's some new wrinkles because we aren't exactly dealing with images, but instead a series of images each one being 1/30th of a second apart. This means that our hash function needs to be:
 
-+ relaxed enough that a compressed and not compressed image both hash to the same number
++ relaxed enough that two frames differing only by compression noise hash to the same number
 + sensitive enough that a frame and the one right before it hash to different numbers
 
 This might be tricky.
@@ -125,9 +126,33 @@ The goal here is to get a high number of buckets (the first metric) with a low n
 
 Okay, looks like 64 was too extreme -- we barely have any buckets at the point. On the other hand, there's an explosion in the bucket side towards the left side of the graph where all frames are detected as duplicates. The sweet spot seems to be around the peak of # buckets at 20 or so. It seems like there's something weird about the data point at 20 frames based on the max bucket size line. There's only so much I'm willing to do to disprove an internet video, so let's go with 24 for the resolution of the hash. 
 
-I replaced the hash function in the original one with a call to the ahash function and re-ran the analysis.
+I replaced the hash function in the original one with a call to this new ahash function and re-ran the analysis.
 
+Neat -- tons of matches! There's too many to display here, but I'll show a few:
+[4262, 72096, 124855, 132392, 147466, 162540, 170077, 185151, 207762, 252984, 260521, 275595, 290669, 305743, 313280, 328354, 343428, 381113, 388650, 396187, 448946, 471557,...]
 
-#### ? ? ?
+These are our duplicate frames. Converting those to timestamps of when they occured, 
+[<a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=142s"> 142.07 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=2403s"> 2403.2 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=4161s"> 4161.83 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=4413s"> 4413.07 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=4915s"> 4915.53 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=5418s"> 5418.0 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=5669s"> 5669.23 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=6171s"> 6171.7 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=6925s"> 6925.4 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=8432s"> 8432.8 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=8684s"> 8684.03 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=9186s"> 9186.5 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=9688s"> 9688.97 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=10191s"> 10191.43 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=10442s"> 10442.67 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=10945s"> 10945.13 </a>,
+ ...]
+
+# Bingo!
+
+In fact, by pure luck these duplicate frames happen right after he cuts the loops together. If you check out these duplicated locations, you can actually <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=2400s"> see the cut happen. </a> 
+
 
 
