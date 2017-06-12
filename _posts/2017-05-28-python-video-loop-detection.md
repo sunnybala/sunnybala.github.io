@@ -105,7 +105,7 @@ This might be tricky.
 
 #### Hashing Out aHash Parameter Selection
 
-The specific hashing algorithm I'm going to try using is called average hash (aHash). There's more information available <a href="https://www.safaribooksonline.com/blog/2013/11/26/image-hashing-with-python/"> online </a>, but the general process is that it reduces the image resolution, turns it to grayscale, and then hashes it. By reducing the resolution, we can potentially remove the effects of the noise. However, we run the risk that adjacent frames get flagged as duplicates because of how close they are to each other. One way that can play around with this trade-off by adjusting the resolution.
+The specific hashing algorithm I'm going to try using is called average hash (aHash). There's more information available <a href="https://www.safaribooksonline.com/blog/2013/11/26/image-hashing-with-python/"> online </a>, but the general process is that it reduces the image resolution, turns it to grayscale, and then hashes it. By reducing the resolution, we can potentially remove the effects of the noise. However, we run the risk that adjacent frames get flagged as duplicates because of how similar they look to each other. One way that can play around with this trade-off by adjusting the resolution.
 
 Below, I show the results of the ahash process at 8x8 and 64x64 resolution. The 8x8 looks like it downsamples too much -- we lose so much information that it seems like most of the images will look the same at 8x8. At 64x64, it looks not so different than the original - it's possible that it may not be different enough to overcome the compression noise. 
 
@@ -130,9 +130,7 @@ Okay, looks like 64 was too extreme -- we barely have any buckets at the point. 
 
 ## Results
 
-I replaced the hash function in the original one with a call to this new ahash function and re-ran the analysis.
-
-Neat -- tons of matches! There's too many to display here, but I'll show a few that are in the same bucket:
+I replaced the hash function in the original one with a call to this new ahash function and re-ran the analysis. Lo and behold, tons of matches! There's too many to display here, but I'll show a few that are in the same bucket:
 + 4262
 + 72096
 + 124855
@@ -161,7 +159,7 @@ These are our duplicate frames. Converting those to rough timestamps (in seconds
 
 In fact, by pure luck these duplicate frames happen right after he cuts the loops together. If you check out these duplicated locations, you can actually <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=2401s"> see the cut happen. </a> It happens right in the middle of a slap! Now it's not necessarily guaranteed that I got every match, but this is far more exhaustive than what we had before and I'm willing to call this one good enough.
 
-I don't follow this guy on youtube so I'm not sure if the video is an inside joke or anything -- it was posted on April 1st -- but this has definitely been a fun project to work out. 
+I don't follow this youtuber so I'm not sure if the video is an inside joke or anything -- it was posted on April 1st -- but this has definitely been a fun project to work out. 
 
 
 
