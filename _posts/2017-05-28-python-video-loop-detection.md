@@ -132,27 +132,29 @@ Neat -- tons of matches! There's too many to display here, but I'll show a few:
 [4262, 72096, 124855, 132392, 147466, 162540, 170077, 185151, 207762, 252984, 260521, 275595, 290669, 305743, 313280, 328354, 343428, 381113, 388650, 396187, 448946, 471557,...]
 
 These are our duplicate frames. Converting those to timestamps of when they occured, 
-[<a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=142s"> 142.07 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=2403s"> 2403.2 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=4161s"> 4161.83 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=4413s"> 4413.07 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=4915s"> 4915.53 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=5418s"> 5418.0 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=5669s"> 5669.23 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=6171s"> 6171.7 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=6925s"> 6925.4 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=8432s"> 8432.8 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=8684s"> 8684.03 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=9186s"> 9186.5 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=9688s"> 9688.97 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=10191s"> 10191.43 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=10442s"> 10442.67 </a>,
- <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=10945s"> 10945.13 </a>,
+[<a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=142s"> 142.07 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=2403s"> 2403.2 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=4161s"> 4161.83 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=4413s"> 4413.07 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=4915s"> 4915.53 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=5418s"> 5418.0 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=5669s"> 5669.23 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=6171s"> 6171.7 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=6925s"> 6925.4 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=8432s"> 8432.8 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=8684s"> 8684.03 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=9186s"> 9186.5 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=9688s"> 9688.97 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=10191s"> 10191.43 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=10442s"> 10442.67 </a>,
+ <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=10945s"> 10945.13 </a>,
  ...]
 
 # Bingo!
 
-In fact, by pure luck these duplicate frames happen right after he cuts the loops together. If you check out these duplicated locations, you can actually <a href="https://www.youtube.com/watch?v=N2VwIfi6LoYt=2400s"> see the cut happen. </a> 
+In fact, by pure luck these duplicate frames happen right after he cuts the loops together. If you check out these duplicated locations, you can actually <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=2400s"> see the cut happen. </a> 
 
+Now I have nothing against this guy. 
 
+This video is way debunked. 
 
