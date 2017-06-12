@@ -128,7 +128,7 @@ Okay, looks like 64 was too extreme -- we barely have any buckets at the point. 
 
 I replaced the hash function in the original one with a call to this new ahash function and re-ran the analysis.
 
-Neat -- tons of matches! There's too many to display here, but I'll show a few:
+Neat -- tons of matches! There's too many to display here, but I'll show a few that are in the same bucket:
 + 4262
 + 72096
 + 124855
@@ -139,13 +139,9 @@ Neat -- tons of matches! There's too many to display here, but I'll show a few:
 + 185151
 + 207762
 + 252984
-+ 260521
-+ 275595
-+ 290669
-+ 305743
-+ ... and many more.
++ etc...
 
-These are our duplicate frames. Converting those to timestamps (in seconds) of when they occured, 
+These are our duplicate frames. Converting those to rough timestamps (in seconds) of when they occured, 
 + <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=142s"> 142.07 </a>
 + <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=2403s"> 2403.2 </a>
 + <a href="https://www.youtube.com/watch?v=N2VwIfi6LoY&t=4161s"> 4161.83 </a>
