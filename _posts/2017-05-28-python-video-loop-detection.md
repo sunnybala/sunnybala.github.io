@@ -161,5 +161,6 @@ In fact, by pure luck these duplicate frames happen right after he cuts the loop
 
 I don't follow this youtuber so I'm not sure if the video is an inside joke or anything -- it was posted on April 1st -- but this has definitely been a fun project to work out. 
 
+<a href="https://github.com/sunnybala/video-loop-detection"> full code </a>
 
 
