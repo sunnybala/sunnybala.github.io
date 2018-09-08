@@ -23,7 +23,7 @@ The Etch-A-Sketch was released by The Ohio Art Company in 1960. Ever since then,
 
 ## The Plan
 
-**Write a program that uses some motors to draw nice pictures on an etch-a-sketch. ** For the reasons above, recreating pictures by hand is tedious and extremely difficult. My hope was to get to a point where my program could draw things better than I could. I've always wanted to learn more about how to use hardware with python so I was pretty excited to start this one. 
+**Write a program that uses some motors to draw nice pictures on an etch-a-sketch.** For the reasons above, recreating pictures by hand is tedious and extremely difficult. My hope was to get to a point where my program could draw things better than I could. I've always wanted to learn more about how to use hardware with python so I was pretty excited to start this one. 
 
 ## Hardware Setup
 
