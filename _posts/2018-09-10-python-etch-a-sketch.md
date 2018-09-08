@@ -97,14 +97,23 @@ The results here play a big role in what I can / can't draw. For example, landsc
 
 ### 3. Picture to Instructions
 
-This is a tricky step. A picture is just a collection of pixels. I'll be finding a path here by converting my picture into a network/graph. Every pixel will become a node and every node will be connected to other nodes (pixels) within a 1 pixel radius. Visualization below.
+This is a tricky step. A picture is just a collection of pixels. I'll be finding a path here by converting my picture into a network/graph. Every pixel will become a node and every node will be connected to other nodes (pixels) within a 1 pixel radius. 
 
-Some pictures will have many graphs and not all of them connect. For example, the grass/dirt in front of the tree below. Since the etch-a-sketch can't make jumps, I take the largest available graph that I can. This gives me a nice,  cleaned up image like the one on the right.
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-pic-to-graph.PNG" class="center"/>
 
-Now that I have a single graph of points, I need to come up with what instructions to tell the motors. My strategy follows a standard depth first search approach. I'll start at the leftmost point in the graph. From there, I'll traverse nearby nodes, arbitrarily picking neighbors. If there are no neighbors at a given node, I backtrack to the last juncture and try a different route. My goal is to hit every node. 
+Some pictures will have many graphs and not all of them connect. For example, the grass/dirt at the bottom of the elephant picture. Since the etch-a-sketch can't make jumps, I take the largest available graph that I can. This gives me a simple picture that's actually achievable on the etch-a-sketch.
 
-I'm totally okay with retracing since the etch-a-sketch lines are pretty thin on first pass anyway. Using the networkx library, I can actually generate these paths quite easily! The output of this process gives me a path (below, left). Finally, I take the path and convert it into a series of steps that I can pass in to my motors. These steps I produce are the result of subtracting locations in the path with the prior location (below, right). 
+Now that I have a single graph of points, I need to come up with what instructions to tell the motors. My strategy follows a standard depth first search approach. I'll start at the leftmost point in the graph. From there, I'll traverse nearby nodes, arbitrarily picking neighbors. If there are no neighbors at a given node, I backtrack to the last juncture and try a different route. My goal is to hit every node. I'm totally okay with retracing since the etch-a-sketch lines are pretty thin on first pass anyway. 
 
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-pathfind.PNG" class="center"/>
+
+Using the networkx library, I can actually generate these paths quite easily! The output of this process gives me a path. Finally, I take the path and convert it into a series of steps that I can pass in to my motors. These steps I produce are the result of subtracting locations in the path with the prior location.
+
+{% highlight python %}
+path =  [(12,5),(12,6),(13,6),(14,7),...]
+steps = [(0,1),(1,0),(1,1),...]
+{% endhighlight %}
+ 
 ## Results 
 
 And...viola! The path above is exactly what we needed. The motors are a bit slow, so here's a time lapse of the etch a sketch drawing an elephant. This represents about 20 minutes of time in real life. 
