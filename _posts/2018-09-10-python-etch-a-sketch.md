@@ -88,9 +88,11 @@ for step in range(40):
 
 ### 2. Simplifying a Picture 
 
-I'm not going to kid myself about being able to create intricately detailed pictures using this etch-a-sketch. However, I do want a process that will take the original pictures and strip them down to the main details. We can do this using standard edge detection techniques like the ones built in to *canny*. 
+I'm not going to kid myself about being able to create intricately detailed pictures using this etch-a-sketch. However, I do want a process that will take the original pictures and strip them down to the main details. We can do this using standard edge detection techniques like the Canny edge detector. Someone else has a great write-up on a pretty [hands off approach to Canny edge detection in python](https://www.pyimagesearch.com/2015/04/06/zero-parameter-automatic-canny-edge-detection-with-python-and-opencv/). 
 
-The canny algorithm takes a tuning parameter sigma. By playing around with this, we can get more/less detail in the edges that are picked up. Below I present a few examples of images run through this edge detection process. 
+That person's code came in handy because the last thing I really wanted to be doing was trying to tune a bunch of different parameters. After all, the main point was to try to focus on the hardware! Below is an example of what you can expect from the edge detection. 
+
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/elephant-edge.PNG" class="center"/>
 
 The results here play a big role in what I can / can't draw. For example, landscapes, buildings, patterns and animals look a whole lot better than people. There's a few more examples of this in result section below. 
 
