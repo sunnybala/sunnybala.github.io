@@ -28,13 +28,12 @@ The Etch-A-Sketch was released by The Ohio Art Company in 1960. Ever since then,
 ## Hardware Setup
 
 Parts List Recipe:
-* Raspberry Pi
-* Etch a Sketch
-* 1x Piece of Wood
-- 2x Stepper Motor
-- 2x Controller
-- 2x Shaft Coupler
-- 8x Jumper Cables (FF)
+- [Raspberry Pi](https://www.amazon.com/CanaKit-Raspberry-Micro-Supply-Listed/dp/B01C6FFNY4 "Amazon")
+- [Etch a Sketch](https://www.amazon.com/gp/product/B01MTS465O "Amazon")
+- 1x Piece of Wood
+- 2x [Stepper Motor](https://www.amazon.com/gp/product/B015RQ97W8 "Amazon")
+- 2x [Shaft Coupler](https://www.amazon.com/gp/product/B01LW5RREA "Amazon")
+- 8x Jumper Cables (https://www.amazon.com/gp/product/B01LZF1ZSZ "Amazon")
 
 ### 1. Hooking Up Motors to Raspberry Pi
 
