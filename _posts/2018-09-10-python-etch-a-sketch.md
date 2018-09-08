@@ -45,7 +45,7 @@ Since the Raspberry Pi is just a tiny computer, we're going to be able to use al
 
 With some force, the knobs can be removed from the etch-a-sketch. This reveals a shaft on the device. The motor also rotates a shaft, so to connect them together I used a chinese-finger-trap-like device called a coupler. It's somewhat flexible, with two small sets of screws on either side that allow it to be tightened around each of the shafts. Here's a mini-guide!
 
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/attaching-motor.png" style="height:400px;" class="center"/>
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/attaching-motor.PNG" style="height:400px;" class="center"/>
 
 ### 3. Stabilizing 
 
