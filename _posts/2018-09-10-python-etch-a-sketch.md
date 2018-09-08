@@ -1,5 +1,7 @@
 
-**The etch-a-sketch is one of the most frustrating drawing toys from childhood. Can we combine some code and motors to make this toy produce nice pictures?** <a href="#bingo"> Yes! <a/> 
+**The etch-a-sketch is one of the most frustrating drawing toys from childhood. Can we combine some code and motors to make this toy produce nice pictures?** The answer is...
+
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-yes.PNG" class="center"/>
 
 <style>
 .center {
