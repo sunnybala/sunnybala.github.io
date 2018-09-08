@@ -6,7 +6,6 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
 }
 
 </style>
@@ -53,7 +52,7 @@ There's quite a bit of resistance on the etch a sketch knobs. Without doing anyt
 
 I went to a local hardware store with the dimensions of the build and they were able to cut me a block of wood that I could screw the motors into to keep them stable. I glued the wood on the bottom to the etch-a-sketch body. This can be tricky if the wood is not appropriately sized. With a screw too loose and the motor will wiggle around when it's trying to rotate. If it's too tight, the motor will be squeezed against the coupler and not be able to rotate. 
 
-Final build!
+### Final Build
 
 <img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-final-build.PNG" class="center"/>
 
