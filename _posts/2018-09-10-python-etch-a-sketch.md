@@ -4,8 +4,7 @@
 ## Background
 The Etch-A-Sketch was released by The Ohio Art Company in 1960. Ever since then, it's been a staple toy in homes, daycares, waiting rooms and schools -- over 100 million have been sold worldwide. It was even a big enough deal to be a character in Toy Story 1 and 2.
 
-![alt text](https://vignette.wikia.nocookie.net/pixar/images/b/bc/DetectiveScene_TS2Etchb4.jpg "Sketch from Toy Story")
-
+<img src="https://vignette.wikia.nocookie.net/pixar/images/b/bc/DetectiveScene_TS2Etchb4.jpg" /> 
 
  The popularity of the device is sort of interesting because it has lots of annoying problems:
 - knobs only move the cursor up/down/left/right. Diagonals and curves require a steady precision that most children 6+ simply don't have. 
