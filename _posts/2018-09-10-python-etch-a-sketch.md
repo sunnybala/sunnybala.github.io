@@ -1,5 +1,5 @@
 
-**The etch-a-sketch is one of the most frustrating drawing toys from childhood. Can we combine some code and motors to make this toy produce nice pictures?** The answer is...
+The etch-a-sketch is one of the most frustrating drawing toys from childhood. **Can we combine some code and motors to make this toy produce nice pictures?** The answer is...
 
 <img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-yes.PNG" class="center"/>
 
@@ -112,8 +112,8 @@ Now that I have a single graph of points, I need to come up with what instructio
 Using the networkx library, I can actually generate these paths quite easily! The output of this process gives me a path. Finally, I take the path and convert it into a series of steps that I can pass in to my motors. These steps I produce are the result of subtracting locations in the path with the prior location.
 
 {% highlight python %}
-path =  [(12,5),(12,6),(13,6),(14,7),...]
-steps = [(0,1),(1,0),(1,1),...]
+path =  [(12,5),(12,6),(13,6),(14,7),...] # coordinates
+steps = [(0,1),(1,0),(1,1),...]           # differences 
 {% endhighlight %}
  
 ## Results 
@@ -136,7 +136,10 @@ And...viola! The path above is exactly what we needed. The motors are a bit slow
 
 <img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-wave.PNG" class="center"/>
 
-## Future Things
+## Further Work
+
+I'm happy with how this turned out and I feel like I've accomplished the goals I had with this. There are several big areas of improvement remaining that I just want to mention here. The most 
+
 
 ## Other Stuff
 
