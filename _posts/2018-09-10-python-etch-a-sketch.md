@@ -122,13 +122,23 @@ And...viola! The path above is exactly what we needed. The motors are a bit slow
 
 <iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/dieIlMUOwns?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-### Elephant
+### Self Portrait
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-self.PNG" class="center"/>
+
+### Lion King
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-lionking.PNG" class="center"/>
 
 ### Low Library at Columbia 
 
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-low.PNG" class="center"/>
+
 ### Great Wave
 
-## Odds and Ends
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-wave.PNG" class="center"/>
+
+## Future Things
+
+## Other Stuff
 
 ### Bugs
 
