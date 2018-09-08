@@ -101,7 +101,7 @@ This is a tricky step. A picture is just a collection of pixels. I'll be finding
 
 <img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-pic-to-graph.PNG" class="center"/>
 
-Some pictures will have many graphs and not all of them connect. For example, the grass/dirt at the bottom of the elephant picture. Since the etch-a-sketch can't make jumps, I take the largest available graph that I can. This gives me a simple picture that's actually achievable on the etch-a-sketch.
+Some pictures will have many graphs and not all of them connect. For example, the grass/dirt at the bottom of the elephant picture. Since the etch-a-sketch can't make jumps, I take the largest network that I can find. This gives me a simple picture that's actually achievable on the etch-a-sketch.
 
 Now that I have a single graph of points, I need to come up with what instructions to tell the motors. My strategy follows a standard depth first search approach. I'll start at the leftmost point in the graph. From there, I'll traverse nearby nodes, arbitrarily picking neighbors. If there are no neighbors at a given node, I backtrack to the last juncture and try a different route. My goal is to hit every node. I'm totally okay with retracing since the etch-a-sketch lines are pretty thin on first pass anyway. 
 
@@ -118,6 +118,7 @@ steps = [(0,1),(1,0),(1,1),...]
 
 And...viola! The path above is exactly what we needed. The motors are a bit slow, so here's a time lapse of the etch a sketch drawing an elephant. This represents about 20 minutes of time in real life. 
 
+<iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/dieIlMUOwns?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### Elephant
 
@@ -133,6 +134,7 @@ If you attempt to do something similar, keep an eye out for nasty mechanical bug
 
 ### Image Sources
 [Toy Story Image, Disney Pixar - Wikia](http://disney.wikia.com/wiki/Etch_A_Sketch)
+
 [Knob Removal - Instructables](https://www.instructables.com/id/How-to-Set-A-Permanent-Etch-A-Sketch/)
 
 
