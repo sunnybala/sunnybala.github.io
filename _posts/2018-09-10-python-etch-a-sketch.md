@@ -33,17 +33,19 @@ Parts List Recipe:
 - 1x Piece of Wood
 - 2x [Stepper Motor](https://www.amazon.com/gp/product/B015RQ97W8 "Amazon")
 - 2x [Shaft Coupler](https://www.amazon.com/gp/product/B01LW5RREA "Amazon")
-- 8x Jumper Cables (https://www.amazon.com/gp/product/B01LZF1ZSZ "Amazon")
+- 8x Jumper Cables(https://www.amazon.com/gp/product/B01LZF1ZSZ "Amazon")
+
+I've got the Amazon links above so it's extra clear what I got -- it seems like for these parts many of the manufacturers seem pretty similar, so I just picked the cheapest at the time. 
 
 ### 1. Hooking Up Motors to Raspberry Pi
 
-Since the Raspberry Pi is just a tiny computer, we're going to be able to use all the python libraries we know and love. Additionally, it has a set of GPIO pins to use. I connect a few of these pins to each of two controllers + motors. By changing the voltage on these pins, I can make motors to rotate. You can read more about how this works here.
+Since the Raspberry Pi is just a tiny computer, we're going to be able to use all the python libraries we know and love. Additionally, it has a set of GPIO pins to use. I connect a few of these pins to each of two controllers + motors. By changing the voltage on these pins, I can make motors to rotate. [Here's a link](https://medium.com/@Keithweaver_/controlling-stepper-motors-using-python-with-a-raspberry-pi-b3fbd482f886) to the guide I followed to get this set up. 
 
 ### 2. Connecting Motors to Knobs
 
-With some force, the knobs can be removed from the etch-a-sketch. This reveals a shaft on the device. The motor also rotates a shaft, so to connect them together I used a chinese-finger-trap-like device called a coupler. It's somewhat flexible, with two small sets of screws on either side that allow it to be tightened around each of the shafts. 
+With some force, the knobs can be removed from the etch-a-sketch. This reveals a shaft on the device. The motor also rotates a shaft, so to connect them together I used a chinese-finger-trap-like device called a coupler. It's somewhat flexible, with two small sets of screws on either side that allow it to be tightened around each of the shafts. Here's a mini-guide!
 
-picture
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/attaching-motor.png" style="height:400px;" class="center"/>
 
 ### 3. Stabilizing 
 
