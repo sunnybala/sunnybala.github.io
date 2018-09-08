@@ -1,10 +1,20 @@
 
 **The etch-a-sketch is one of the most frustrating drawing toys from childhood. Can we combine some code and motors to make this toy produce nice pictures?** <a href="#bingo"> Yes! <a/> 
 
-## Background
-The Etch-A-Sketch was released by The Ohio Art Company in 1960. Ever since then, it's been a staple toy in homes, daycares, waiting rooms and schools -- over 100 million have been sold worldwide. It was even a big enough deal to be a character in Toy Story 1 and 2.
+<style>
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 
-<img src="https://vignette.wikia.nocookie.net/pixar/images/b/bc/DetectiveScene_TS2Etchb4.jpg" /> 
+</style>
+
+## Background
+The Etch-A-Sketch was released by The Ohio Art Company in 1960. Ever since then, it's been a staple toy in homes, daycares, waiting rooms and schools -- over 100 million have been sold worldwide. It was even a big enough deal to be a character in Toy Story 1 and 2!
+
+<img src="https://vignette.wikia.nocookie.net/pixar/images/b/bc/DetectiveScene_TS2Etchb4.jpg" style="height:250px;" class="center"/> 
 
  The popularity of the device is sort of interesting because it has lots of annoying problems:
 - knobs only move the cursor up/down/left/right. Diagonals and curves require a steady precision that most children 6+ simply don't have. 
