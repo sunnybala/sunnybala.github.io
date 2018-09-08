@@ -33,7 +33,7 @@ Parts List Recipe:
 - 1x Piece of Wood
 - 2x [Stepper Motor](https://www.amazon.com/gp/product/B015RQ97W8 "Amazon")
 - 2x [Shaft Coupler](https://www.amazon.com/gp/product/B01LW5RREA "Amazon")
-- 8x Jumper Cables(https://www.amazon.com/gp/product/B01LZF1ZSZ "Amazon")
+- 8x [Jumper Cables](https://www.amazon.com/gp/product/B01LZF1ZSZ "Amazon")
 
 I've got the Amazon links above so it's extra clear what I got -- it seems like for these parts many of the manufacturers seem pretty similar, so I just picked the cheapest at the time. 
 
@@ -52,6 +52,9 @@ With some force, the knobs can be removed from the etch-a-sketch. This reveals a
 There's quite a bit of resistance on the etch a sketch knobs. Without doing anything, if we set the motor to rotate, the knob will actually stay still and the motor itself will rotate! 
 
 I went to a local hardware store with the dimensions of the build and they were able to cut me a block of wood that I could screw the motors into to keep them stable. I glued the wood on the bottom to the etch-a-sketch body. This can be tricky if the wood is not appropriately sized. With a screw too loose and the motor will wiggle around when it's trying to rotate. If it's too tight, the motor will be squeezed against the coupler and not be able to rotate. 
+
+Final build!
+
 
 ## Software Setup
 
@@ -113,4 +116,12 @@ And...viola! The path above is exactly what we needed. The motors are a bit slow
 
 ## Odds and Ends
 
+### Bugs
+
 If you attempt to do something similar, keep an eye out for nasty mechanical bugs. When motors change directions, there can be a bit of "give" resulting in a deadzone. This is highly dependent on your own build. This took me FOREVER to diagnose. To fix it, I drew a series of grids to quantify exactly how many rotation units this deadzone was. I then added logic to my motor class to add extra rotation units when the direction was changing. 
+
+### Image Sources
+[Toy Story Image, Disney Pixar - Wikia](http://disney.wikia.com/wiki/Etch_A_Sketch)
+[Knob Removal - Instructables](https://www.instructables.com/id/How-to-Set-A-Permanent-Etch-A-Sketch/)
+
+
