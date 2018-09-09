@@ -122,24 +122,40 @@ And...viola! The path above is exactly what we needed. The motors are a bit slow
 
 <iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/dieIlMUOwns?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-### Self Portrait
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-self.PNG" class="center"/>
+Not bad at all. Below are a few other examples. An additional note -- my program resizes images which can end up stretching them a bit horizontally. This was done just for convenience to make sure all input pictures would fit on the screen. If there's a specific picture you really wanted to draw, you wouldn't need to do this. All of these run for several hours. 
 
-### Lion King
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-lionking.PNG" class="center"/>
+### Batman
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-batman.PNG" class="center"/>
+* image stretching makes batman look swole
+* faces are hard 
+* etch looks more like a generalized superhero rather than batman (no clue where his "ears" went)
+
+### A Self Portrait
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-self.PNG" class="center"/>
+* right knob is hard for the edge detection to pick up
+* the etching reproduces the edges, but the edges don't look 3D
 
 ### Low Library at Columbia 
-
 <img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-low.PNG" class="center"/>
+* this turned out way better than I thought it would
+* edge detection struggles with sculptures (alma mater is unrecognizable)
+* etching is a little bit fuzzy
 
 ### Great Wave
-
 <img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-wave.PNG" class="center"/>
+* I think this one is excellent
+* Fuzziness of the etching works fine because it's water
+* Etch a sketch appears to have drifted rightword slightly -- see mt. fuji is not perfectly lined up on every pass. Most likely due to drawing too close to left side of etch a sketch.
 
 ## Further Work
 
-I'm happy with how this turned out and I feel like I've accomplished the goals I had with this. There are several big areas of improvement remaining that I just want to mention here. The most 
+I'm happy with how this turned out! I feel like I've accomplished the goals I had with this. There are several big areas of improvement remaining that I just want to mention here. Maybe I'll revisit these at some point. My current plan is to draw a few of these on the screen at the same time, maybe [freeze it](https://www.instructables.com/id/How-to-Set-A-Permanent-Etch-A-Sketch/), and then just put it on my wall as a little art piece. 
 
+The most glaring of these is the **pathfinding**. Doing depth first search with backtracking leads to insanely long paths. Finding the shortest path that hits all nodes in my network is a hard problem, but it lead to a huge reduction in draw times. There are approximations to problems like this out there and there are several tricks I could use to help (for example, maybe I only need to hit 90% of the pixels). The less time drawing, the less time for mechanical error to accumulate and results will be sharper.
+
+The next issue is the **edge detection**. I didn't want to spend much time on this on my first pass, but it's clear that the drawings can only be as good as the edges going in. I tried a lot of images and found that often times the edges just weren't really recognizable without seeing the original image. This is because I used a [simple, general plug and play approach](https://www.pyimagesearch.com/2015/04/06/zero-parameter-automatic-canny-edge-detection-with-python-and-opencv/) to edge detection. If I created my own version of this I could more carefully tune parameters to my specific use case.
+
+Finally, **better mounting for the motors** would also help cut down on mechanical errors.
 
 ## Other Stuff
 
@@ -148,8 +164,6 @@ I'm happy with how this turned out and I feel like I've accomplished the goals I
 If you attempt to do something similar, keep an eye out for nasty mechanical bugs. When motors change directions, there can be a bit of "give" resulting in a deadzone. This is highly dependent on your own build. This took me FOREVER to diagnose. To fix it, I drew a series of grids to quantify exactly how many rotation units this deadzone was. I then added logic to my motor class to add extra rotation units when the direction was changing. 
 
 ### Image Sources
-[Toy Story Image, Disney Pixar - Wikia](http://disney.wikia.com/wiki/Etch_A_Sketch)
-
 [Knob Removal - Instructables](https://www.instructables.com/id/How-to-Set-A-Permanent-Etch-A-Sketch/)
 
 
