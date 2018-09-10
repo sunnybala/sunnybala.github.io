@@ -60,11 +60,13 @@ I went to a local hardware store with the dimensions of the build and they were 
 
 ## Software Setup
 
-The descriptions below will be mostly high level but all the code for this project is available on GitHub if you'd like to dive in at a deeper level.  
+There's a few different ways to go about this portion of the project. When I started out, I googled to see if anyone had done things like this before. A few projects popped up. They seemed to approach the drawing in one of two ways. Some projects used the etch a sketch to draw in a grid and then "color" in the cells so that it looked like a picture. Other projects used toolpaths like the way 3D printers and metal cutting machines determine the routes they take. The advantage here is great paths, but creating the toolpaths is kind of a process.
+
+**I wanted to do it in a fully automated way where the only input is a picture and the output is a cleanly drawn image.** The descriptions below will be mostly high level but all the code for this project is available on GitHub if you'd like to dive in at a deeper level. 
 
 ### 1. Controlling Motors
 
-The raspberry pi python library **rpi** lets us control the motor via the pins. I created a class to represent the motor. I'll be using this in the code is in the following way:
+The raspberry pi python library **rpi** lets us control the motor via the pins. I created a class to represent the motor, abstracting around the information from [this guide](https://medium.com/@Keithweaver_/controlling-stepper-motors-using-python-with-a-raspberry-pi-b3fbd482f886) I'll be using this in the code is in the following way:
 
 {% highlight python %}
 
