@@ -23,7 +23,7 @@ Simulate groups of *n* people in an elevator. Find some quantitative way to meas
 
 What makes an elevator uncomfortable? One natural idea is how close people are to each other. For example, the situation on the left seems far more awkward than the one on the right.
 
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/awk_ele_lr.PNG" class="center"/>
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/awk_ele_lr2.PNG" class="center"/>
 
 Another factor to consider is that
 
