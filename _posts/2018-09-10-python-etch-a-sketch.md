@@ -8,7 +8,7 @@ The etch-a-sketch is one of the most frustrating drawing toys from childhood. **
 
 <img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-yes.PNG" class="center"/>
 
-#### Sneak Peek
+#### Sneak Peek at Finished Product
 
 <img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch_done.PNG" class="center"/>
 
