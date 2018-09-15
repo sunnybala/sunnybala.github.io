@@ -170,7 +170,3 @@ Finally, **better mounting for the motors** would also help cut down on mechanic
 
 If you attempt to do something similar, keep an eye out for nasty mechanical bugs. When motors change directions, there can be a bit of "give" resulting in a deadzone. This is highly dependent on your own build. This took me FOREVER to diagnose. To fix it, I drew a series of grids to quantify exactly how many rotation units this deadzone was. I then added logic to my motor class to add extra rotation units when the direction was changing. 
 
-### Image Sources
-[Knob Removal - Instructables](https://www.instructables.com/id/How-to-Set-A-Permanent-Etch-A-Sketch/)
-
-
