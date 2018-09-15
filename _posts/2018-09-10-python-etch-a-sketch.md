@@ -67,7 +67,7 @@ I went to a local hardware store with the dimensions of the build and they were 
 
 There's a few different ways to go about this portion of the project. When I started out, I googled to see if anyone had done things like this before. A few projects popped up. They seemed to approach the drawing in one of two ways. Some projects used the etch a sketch to [draw in a grid](https://www.youtube.com/watch?v=q2LIMYKQLXE) and then "color" in the cells so that it looked like a picture. Other projects used [toolpaths](https://www.youtube.com/watch?v=bmDz3yQFOWc) like the way 3D printers and metal cutting machines determine the routes they take. The advantage here is great paths, but creating the toolpaths is kind of a process.
 
-**I wanted to do it in a fully automated way where the only input is a picture and the output is a cleanly drawn image.** The descriptions below will be mostly high level but all the code for this project is available on GitHub if you'd like to dive in at a deeper level. 
+**I wanted to do it in a fully automated way where the only input is a picture and the output is a cleanly drawn image.** The descriptions below will be mostly high level but all the code for this project is [available on GitHub](https://github.com/sunnybala/PyEtchASketch) if you'd like to dive in at a deeper level. 
 
 ### 1. Controlling Motors
 
