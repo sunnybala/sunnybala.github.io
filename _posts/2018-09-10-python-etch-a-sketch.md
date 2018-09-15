@@ -28,7 +28,7 @@ The Etch-A-Sketch was released by The Ohio Art Company in 1960. Ever since then,
 <img src="https://vignette.wikia.nocookie.net/pixar/images/b/bc/DetectiveScene_TS2Etchb4.jpg" style="height:250px;" class="center"/> 
 
  The popularity of the device is sort of interesting because it has lots of annoying problems:
-- knobs only move the cursor up/down/left/right. Diagonals and curves require a steady precision that most children 6+ simply don't have. 
+- knobs only move the cursor up/down/left/right. Diagonals and curves require a steady precision that most children 3+ simply don't have. 
 - you can't draw two objects that are not connected.
 - No ability to undo small mistakes. If you want to undo something you'll have to redo your whole masterpiece.
 
