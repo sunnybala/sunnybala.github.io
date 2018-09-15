@@ -54,7 +54,7 @@ The derivative approach would tell you to step right, though most people might l
 In that case, we might be able to do this in an even simpler way. If all you care about is where you are relative to the nearest person, we can use a simpler rule for determining the direction to step in. Simply identify the nearest person, and take a small step in the exact opposite direction! We'll still do the procedure for person by person and repeat many times to converge to a stable arrangement.
 
 ## Code
-The code for this project is available on GitHub.
+The code for this project is [available on GitHub](https://github.com/sunnybala/awkElevator).
 
 I hadn't made animations before but after playing around with tutorials about matplotlib, I eventually got up and running. The good news is that I didn't need anything fancy -- just a box to represent the elevator and a bunch of moving circles inside to represent people. 
 
