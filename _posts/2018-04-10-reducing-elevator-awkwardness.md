@@ -110,13 +110,13 @@ Starting places are random and matter when looking at results. For example, chec
 
 <img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/awk_ele_stable.PNG" class="center"/>
 
-The two ending arrangements both seem kind of reasonable. If we compute the sum of pairwise distance between everyone, we can see that it's minimized on the left. We could also look at the min of pairwise distance between everyone, which is more like checking out how the most uncomfortable person is doing. That's also minimized for the arrangement on the left. We can therefore 
+The two ending arrangements both seem kind of reasonable. If we compute the sum of pairwise distance between everyone, we can see that it's maximized on the left. We could also look at the min of pairwise distance between everyone, which is more like checking out how the most uncomfortable person is doing. That's also maximized for the arrangement on the left. That means the arrangement on the left is probably the correct solution!
 
 As I discussed this project with some coworkers, one of them pointed out that this seems like a variant of a classic math problem: [Circle Packing in a Square.](https://en.wikipedia.org/wiki/Circle_packing_in_a_square) Upon reading into it a bit, it actually seems to be just the kind of solution I had been trying to find. 
 
-The problem tries to figure out the biggest size *n* circles could be and still all fit in a square. The way to think about this is that each circle represents the comfort zone of a person. These seem to minimize the second metric I was showing, minimum pairwise distance.
+The problem tries to figure out the biggest size *n* circles could be and still all fit in a square. One way to think about this is that each circle represents the comfort zone of a person. These seem to minimize the second metric I was showing, minimum pairwise distance.
 
-On one hand, that's great that there's a quick reference and it's possible to verify my results against those from wikipedia. On the other hand, it's a little like peeking at the answer to a riddle in that it takes away from the thrill of the solving adventure. Despite that, it's been pretty neat to work on. An exhaustive set of optimal arrangements can be found [at the wikipedia page.](https://en.wikipedia.org/wiki/Circle_packing_in_a_square) 
+On one hand, that's great that there's a quick reference and it's possible to verify my results against those from wikipedia. On the other hand, it's a little like peeking at the answer to a riddle in that it takes away from the thrill of the solving adventure. The great news is that it confirms that the arrangements I was seeing seem to be correct, it's been pretty neat to work on. An exhaustive set of optimal arrangements can be found [at the wikipedia page.](https://en.wikipedia.org/wiki/Circle_packing_in_a_square) 
 
 ## Further Extensions
 
