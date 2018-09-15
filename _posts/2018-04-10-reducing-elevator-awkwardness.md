@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reducing Elevator Awkwardness With Python
+title: Numerically Reducing Elevator Awkwardness
 comments: true
 ---
 
