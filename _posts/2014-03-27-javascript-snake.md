@@ -3,12 +3,13 @@ layout: post
 title: Javascript Snake
 comments: true
 ---
-**I coded up snake for practice. Click <a href="http://sandeepba.github.io/projects/snake.html" style="text-align: center;"> here </a>**
+**I coded up snake for practice. </a>** 
 
+**2018 Update -- I've since taken the game down since it's not really worth maintaining. Keeping the post up just for the archive.**
 
 As a kid, I spent a lot of time playing flash games online. One of my jobs this summer was converting a flash based dashboard to an iOS friendly one based on Javascript and SVG and it got me thinking– can we expect more and more of the addicting games on sites like MiniClip or Armor Games to similarly move away from flash?  After all, it does seem like the iOS market share is only expanding.
 
-To take a stab at the questions I wrote a basic implementation of the game Snake using Javascript with the d3 library. You can check it out the project here . Below, I’m going to briefly cover some of the lessons I’ve learned.
+To take a stab at the questions I wrote a basic implementation of the game Snake using Javascript with the d3 library. Below, I’m going to briefly cover some of the lessons I’ve learned.
 
 1. It was a bit of a leap for me to start thinking about the snake as just a Javascript array. In my mind I had assumed that I would need a separate head and then a separate set of body chunk that together make the snake. Once I began to look at the snake this way I could then address the issue of…
 
