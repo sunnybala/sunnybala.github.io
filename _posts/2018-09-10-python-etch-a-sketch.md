@@ -4,6 +4,8 @@ title: Making Etch-a-Sketch Art With Python
 comments: true
 ---
 
+<meta property="og:image" content="http://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch_done.PNG"/>
+
 The etch-a-sketch is one of the most frustrating drawing toys from childhood. **Can we combine some code and motors to make this toy produce nice pictures?** The answer is...
 
 <img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch-yes.PNG" class="center"/>
