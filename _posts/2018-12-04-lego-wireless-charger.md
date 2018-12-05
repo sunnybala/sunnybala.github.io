@@ -23,9 +23,7 @@ Wireless iPhone Qi chargers tend to look pretty boring; they are usually just a 
 
 ### Build Guide
 
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/lego_build_guide.png" class="center"/>
-
-The process is pretty straightforward but here's a guide. 
+The process is pretty straightforward but here's a guide with pictures below. 
 
 1. Buy the cheapest wireless charger you can find
 2. Carefully crack it open, taking care not to damage the internal chip/coils
@@ -36,3 +34,7 @@ The process is pretty straightforward but here's a guide.
 7. Cover up the exposed circuitry on the bottom with bricks 
 8. Top view
 9. Side view
+
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/lego_build_guide.png" class="center"/>
+
+
