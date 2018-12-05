@@ -4,7 +4,7 @@ title: Building a Lego Wireless Charger
 comments: true
 ---
 
-Wireless iPhone Qi chargers tend to look pretty boring -- usually just a circular pad to throw your phone on. I wanted to see if I could make a cooler looking one, and Legos are the ultimate cool!
+Wireless iPhone Qi chargers tend to look pretty boring; they are usually just a circular pad to throw your phone on. I wanted to see if I could make a cooler looking one using Legos!
 
 #### Finished Project
 
@@ -21,7 +21,7 @@ Wireless iPhone Qi chargers tend to look pretty boring -- usually just a circula
 
 </style>
 
-## Setup
+### Build Guide
 
 <img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/lego_build_guide.png" class="center"/>
 
@@ -34,4 +34,5 @@ The process is pretty straightforward but here's a guide.
 5. Add bricks that block the chip from being pulled out from the USB cable
 6. Cover up the top with flat bricks
 7. Cover up the exposed circuitry on the bottom with bricks 
-8&9. Top and side view
+8. Top view
+9. Side view
