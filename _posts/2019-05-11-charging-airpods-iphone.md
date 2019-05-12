@@ -21,7 +21,9 @@ Several tech journalists have speculated that the new iPhone later this year wil
 
 Build a cable to extract power from an iPhone and use it to charge other devices. 
 
-I couldn't seem to find much online about this except other people asking if this sort of thing was possible. There was a [crowdfunded product](https://www.indiegogo.com/projects/chargebite-a-social-charger "Indiegogo")[Raspberry Pi](https://www.amazon.com/CanaKit-Raspberry-Micro-Supply-Listed/dp/B01C6FFNY4 "Amazon") crowdfunding campaign </a> for something in the space 5-6 years ago, but that required having 2 iPhones to donate power to charge 1. The lack of previous work on charging in this way, even for hobby projects, definitely made me suspicious that there was a big roadblock somewhere in the process that I would hit. I was pretty surprised to see this actually work! I think I lucked out due to the lower charging requirements of the AirPods relative to the iPhone.
+## Background
+
+I couldn't seem to find much online about this except other people asking if this sort of thing was possible. There was a [crowdfunded product](https://www.indiegogo.com/projects/chargebite-a-social-charger "Indiegogo") for something in the space 5-6 years ago, but that required having 2 iPhones to donate power to charge 1. The lack of previous work on charging in this way, even for hobby projects, definitely made me suspicious that there was a big roadblock somewhere in the process that I would hit. I was pretty surprised to see this actually work! I think I lucked out due to the lower charging requirements of the AirPods relative to the iPhone.
 
 For anyone following along to try the same, **definitely proceed at your own risk with making this. I’m no expert so I can’t speak to whether this can damage your devices.**
 
@@ -71,7 +73,7 @@ I used a step up regulator I bought from Amazon to convert from 3.3V to 5V. The 
 
 Plugging the devices into each other was the scary part...but it worked! The AirPods charged without a fuss and my phone didn't burst into flames. I kept track of the charge reported and have compiled those results below. It's in  line with expectations -- slower than using the wall adapter charger but in a pinch this could work.
 
-<iframe width="560" height="315" class="center" src="https://www.youtube.com/watch?v=kXKbaTPtOZc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/kXKbaTPtOZc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 It's also true that if I plug my iPhone 6 into my iPhone X (using the 6 as the charge doner) the charging does appear to activate, however, it doesn't seem to actually charge. This is likely because there just isn't enough power coming out of the doner iPhone. 
 
