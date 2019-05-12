@@ -79,7 +79,7 @@ Plugging the devices into each other was the scary part...but it worked. The Air
 
 <iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/kXKbaTPtOZc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 <br>
-It's also true that if I plug my iPhone 6 into my iPhone X (using the 6 as the charge doner) the charging does appear to activate, however, it doesn't seem to actually charge. This is likely because there just isn't enough power coming out of the doner iPhone. 
+It's also true that if I plug my iPhone 6 into my iPhone X (using the 6 as the charge donor) the charging does appear to activate, however, it doesn't seem to actually charge. This is likely because there just isn't enough power coming out of the donor iPhone. 
 
 ## Gotchas
 
@@ -89,5 +89,5 @@ The iPhone fan connector is pretty sensitive and easy to break – I broke my fi
 ## Sources
 
 <div id="sources">
-[This youtube video](https://www.youtube.com/watch?v=UTcHMXF6P9M) claims to make an iPhone to iPhone charger in a similar way. Several comments suggest the charging shown here might be fake. From the calculations, I just don’t see how it’s possible to extract enough power to charge a phone in this way. But it’s not totally fake – I think if he had tried other devices it might have worked, just like what I'm seeing in these results. 
+<a href="https://www.youtube.com/watch?v=UTcHMXF6P9M"> This youtube video </a> claims to make an iPhone to iPhone charger in a similar way. Several comments suggest the charging shown here might be fake. From the calculations, I just don’t see how it’s possible to extract enough power to charge a phone in this way. But it’s not totally fake – I think if he had tried other devices it might have worked, just like what I'm seeing in these results. 
 <div>
