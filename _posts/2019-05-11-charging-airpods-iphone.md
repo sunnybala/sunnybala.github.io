@@ -15,7 +15,7 @@ Several tech journalists have speculated that the new iPhone later this year wil
     margin-right: auto;
 }
 
-img {
+img height="400" {
 	height: 250 px;
 }
 
@@ -59,11 +59,11 @@ However, there are lightning accessories that don’t have power of their own. F
 
 I used my Dremel to cut away the hard plastic casing of the fan. Despite being lightning, the fan only worked when plugged into my phone with the fan facing me. When facing the fan away from me, nothing happened. While taking this apart, make sure to remember which way the cable has to be plugged in. For me, the flatter side of the chip had to be facing up.
 
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/fan_cut.jpg" class="center"/>
+<img height="400" src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/fan_cut.jpg" class="center"/>
 
 Next, I de-solder the connections between the chip and the fan’s motor. This gives me a standalone chip. Plugging it into my phone and using a multimeter, I recorded a voltage of 3.3V. At 1W, this is 300 mA.
 
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/de_solder.jpg" class="center"/>
+<img height="400" src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/de_solder.jpg" class="center"/>
 
 ### Step 2: Matching Voltage
 
@@ -71,17 +71,17 @@ This presents 2 issues. USB charging needs 5V, so we’ll need to step it up. Ho
 
 I used a step up regulator I bought from Amazon to convert from 3.3V to 5V. The additional benefit is that the USB output keeps things pretty flexible on what I want to power. After soldering the connection I checked my multimeter to confirm I was getting 5V (I was) and so I was ready to test!
 
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/solder_lightning.jpg" class="center"/>
+<img height="400" src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/solder_lightning.jpg" class="center"/>
 
 ## Wrapping Up
 
 Plugging the devices into each other was the scary part...but it worked! The AirPods charged without a fuss and my phone didn't burst into flames. I kept track of the charge reported and have compiled those results below. It's in  line with expectations -- slower than using the wall adapter charger but in a pinch this could work.
 
 <iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/kXKbaTPtOZc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
+<br>
 It's also true that if I plug my iPhone 6 into my iPhone X (using the 6 as the charge doner) the charging does appear to activate, however, it doesn't seem to actually charge. This is likely because there just isn't enough power coming out of the doner iPhone. 
 
-## Gotchas
+ ## Gotchas
 
 The iPhone fan connector is pretty sensitive and easy to break – I broke my first version of this after testing for a day just from repeated insertion. I suggest putting some sort of casing around the chip so it doesn’t flex against the lightning connector. In my final build, I cut the fan casing to keep part of the shell around the lightning cable and used hot glue to keep it fixed to the circuit. That way I could insert the cable without worrying as much about breaking the connector.
 
@@ -89,5 +89,5 @@ The iPhone fan connector is pretty sensitive and easy to break – I broke my fi
 ## Sources
 
 <div id="sources">
-[1] [This youtube video](https://www.youtube.com/watch?v=UTcHMXF6P9M) claims to make an iPhone to iPhone charger in a similar way. Several comments suggest the charging shown here might be fake. From the calculations, I just don’t see how it’s possible to extract enough power to charge a phone in this way. But it’s not totally fake – I think if he had tried other devices it might have worked, just like what I'm seeing in these results. 
+[This youtube video](https://www.youtube.com/watch?v=UTcHMXF6P9M) claims to make an iPhone to iPhone charger in a similar way. Several comments suggest the charging shown here might be fake. From the calculations, I just don’t see how it’s possible to extract enough power to charge a phone in this way. But it’s not totally fake – I think if he had tried other devices it might have worked, just like what I'm seeing in these results. 
 <div>
