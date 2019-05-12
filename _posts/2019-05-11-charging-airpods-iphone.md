@@ -4,13 +4,13 @@ title: Charging AirPods with an iPhone
 comments: true
 ---
 
-<meta property="og:image" content="http://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch_done.PNG"/>
+<meta property="og:image" content="http://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch_done.png"/>
 
 Several tech journalists have speculated that the new iPhone later this year will be able to share its power to charge AirPods. **Why bother waiting till Fall when we can build something to do it today?**
 
 #### Sneak Peek at Finished Project
 
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch_done.PNG" class="center"/>
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch_done.png" class="center"/>
 
 <style>
 .center {
@@ -57,11 +57,11 @@ However, there are lightning accessories that don’t have power of their own. F
 
 I used my Dremel to cut away the hard plastic casing of the fan. Despite being lightning, the fan only worked when plugged into my phone with the fan facing me. When facing the fan away from me, nothing happened. While taking this apart, make sure to remember which way the cable has to be plugged in. For me, the flatter side of the chip had to be facing up.
 
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/fan_cut.PNG" class="center"/>
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/fan_cut.png" class="center"/>
 
 Next, I de-solder the connections between the chip and the fan’s motor. This gives me a standalone chip. Plugging it into my phone and using a multimeter, I recorded a voltage of 3.3V. At 1W, this is 300 mA.
 
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/de_solder.PNG" class="center"/>
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/de_solder.png" class="center"/>
 
 ### Step 2: Matching Voltage
 
@@ -69,7 +69,7 @@ This presents 2 issues. USB charging needs 5V, so we’ll need to step it up. Ho
 
 I used a step up regulator I bought from Amazon to convert from 3.3V to 5V. The additional benefit is that the USB output keeps things pretty flexible on what I want to power. After soldering the connection I checked my multimeter to confirm I was getting 5V (I was) and so I was ready to test!
 
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/solder_lightning.PNG" class="center"/>
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/solder_lightning.png" class="center"/>
 
 ## Wrapping Up
 
