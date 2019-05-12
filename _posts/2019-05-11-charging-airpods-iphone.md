@@ -58,7 +58,7 @@ The iPhone lightning port isn’t really meant to be used to draw power. Finding
 However, there are lightning accessories that don’t have power of their own. For example, this or this or this. If we can just take apart one of these accessories, we can take advantage of whatever power drawing method they’ve built. I chose this 1 Watt lightning fan based on something I saw in a <a href="#sources"> similar YouTube video </a>.
 
 I used my Dremel to cut away the hard plastic casing of the fan. Despite being lightning, the fan only worked when plugged into my phone with the fan facing me. When facing the fan away from me, nothing happened. While taking this apart, make sure to remember which way the cable has to be plugged in. For me, the flatter side of the chip had to be facing up.
-
+https://www.youtube.com/watch?v=UTcHMXF6P9M
 <img height="400" src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/fan_cut.jpg" class="center"/>
 
 Next, I de-solder the connections between the chip and the fan’s motor. This gives me a standalone chip. Plugging it into my phone and using a multimeter, I recorded a voltage of 3.3V. 
