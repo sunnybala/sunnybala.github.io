@@ -51,7 +51,7 @@ I also found my hot glue gun and heat shrink tubing for wires helped keep things
 
 The iPhone lightning port isn’t really meant to be used to draw power. Finding information on how to do this is pretty tough – perhaps being a member of the Apple hardware development program would make finding that easier, but only corporations can join (not individuals). Finally, lightning devices have authentication chips inside the cable, so building this part from scratch didn’t seem viable for me.
 
-However, there are lightning accessories that don’t have power of their own. For example, this or this or this. If we can just take apart one of these accessories, we can take advantage of whatever power drawing method they’ve built. I chose this 1 Watt lightning fan based on something I saw in a similar YouTube video[1]. I recommend buying a 4 pack so that you have room to mess up (I accidentally broke 2 of them as I was trying to build this).
+However, there are lightning accessories that don’t have power of their own. For example, this or this or this. If we can just take apart one of these accessories, we can take advantage of whatever power drawing method they’ve built. I chose this 1 Watt lightning fan based on something I saw in a <a href="#sources"> similar YouTube video </a>.
 
 I used my Dremel to cut away the hard plastic casing of the fan. Despite being lightning, the fan only worked when plugged into my phone with the fan facing me. When facing the fan away from me, nothing happened. While taking this apart, make sure to remember which way the cable has to be plugged in. For me, the flatter side of the chip had to be facing up.
 
@@ -84,4 +84,6 @@ The iPhone fan connector is pretty sensitive and easy to break – I broke my fi
  
 ## Sources
 
+<div id="sources">
 [1] [This youtube video](https://www.youtube.com/watch?v=UTcHMXF6P9M) claims to make an iPhone to iPhone charger in a similar way. Several comments suggest the charging shown here might be fake. From the calculations, I just don’t see how it’s possible to extract enough power to charge a phone in this way. But it’s not totally fake – I think if he had tried other devices it might have worked, just like what I'm seeing in these results. 
+<div>
