@@ -1,0 +1,89 @@
+---
+layout: post
+title: Charging AirPods with an iPhone
+comments: true
+---
+
+<meta property="og:image" content="http://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch_done.PNG"/>
+
+Several tech journalists have speculated that the new iPhone later this year will be able to share its power to charge AirPods. **Why bother waiting till Fall when we can build something to do it today?**
+
+#### Sneak Peek at Finished Project
+
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/etch_done.PNG" class="center"/>
+
+<style>
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+</style>
+
+## The Plan
+
+Build a cable to extract power from an iPhone and use it to charge other devices. 
+
+I couldn't seem to find much online about this except other people asking if this sort of thing was possible. There was a [crowdfunded product](https://www.indiegogo.com/projects/chargebite-a-social-charger "Indiegogo")[Raspberry Pi](https://www.amazon.com/CanaKit-Raspberry-Micro-Supply-Listed/dp/B01C6FFNY4 "Amazon") crowdfunding campaign </a> for something in the space 5-6 years ago, but that required having 2 iPhones to donate power to charge 1. The lack of previous work on charging in this way, even for hobby projects, definitely made me suspicious that there was a big roadblock somewhere in the process that I would hit. I was pretty surprised to see this actually work! I think I lucked out due to the lower charging requirements of the AirPods relative to the iPhone.
+
+For anyone following along to try the same, **definitely proceed at your own risk with making this. I’m no expert so I can’t speak to whether this can damage your devices.**
+
+## Hardware Setup
+
+Parts List Recipe:
+- [1x Lightning Port Fan](https://www.amazon.com/gp/product/B078P7WVKD "Amazon")
+- [3V to 5V Step Up Board](https://www.amazon.com/gp/product/B07F266X24 "Amazon")
+- 1x Lightning cable
+- Some wire
+
+I bought a 4 pack of the fans knowing I'd probably mess up and break a few. That ended up being a good call because I broke 3. 
+
+Required Tools:
+- Soldering Iron
+- Some sort of cutting tool (I used a Dremel)
+
+I also found my hot glue gun and heat shrink tubing for wires helped keep things in place but it's not necessary.
+
+## Build
+
+ There’s only 2 steps here to get this working.
+
+### Step 1: Power Extraction
+
+The iPhone lightning port isn’t really meant to be used to draw power. Finding information on how to do this is pretty tough – perhaps being a member of the Apple hardware development program would make finding that easier, but only corporations can join (not individuals). Finally, lightning devices have authentication chips inside the cable, so building this part from scratch didn’t seem viable for me.
+
+However, there are lightning accessories that don’t have power of their own. For example, this or this or this. If we can just take apart one of these accessories, we can take advantage of whatever power drawing method they’ve built. I chose this 1 Watt lightning fan based on something I saw in a similar YouTube video[1]. I recommend buying a 4 pack so that you have room to mess up (I accidentally broke 2 of them as I was trying to build this).
+
+I used my Dremel to cut away the hard plastic casing of the fan. Despite being lightning, the fan only worked when plugged into my phone with the fan facing me. When facing the fan away from me, nothing happened. While taking this apart, make sure to remember which way the cable has to be plugged in. For me, the flatter side of the chip had to be facing up.
+
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/fan_cut.PNG" class="center"/>
+
+Next, I de-solder the connections between the chip and the fan’s motor. This gives me a standalone chip. Plugging it into my phone and using a multimeter, I recorded a voltage of 3.3V. At 1W, this is 300 mA.
+
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/de_solder.PNG" class="center"/>
+
+### Step 2: Matching Voltage
+
+This presents 2 issues. USB charging needs 5V, so we’ll need to step it up. However, once we step it up, we’ll only be running 200 mA (1W/5V) through our charger. For comparison, standard Apple wall USB chargers are 5 Watts and therefore provide 1000 mA (and 2000 mA for fast charging 10 Watt adapter!). This 200 mA is too low for charging Apple’s bigger devices (iPhone, iPad) but as I see later, it’s enough for AirPods.
+
+I used a step up regulator I bought from Amazon to convert from 3.3V to 5V. The additional benefit is that the USB output keeps things pretty flexible on what I want to power. After soldering the connection I checked my multimeter to confirm I was getting 5V (I was) and so I was ready to test!
+
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/solder_lightning.PNG" class="center"/>
+
+## Wrapping Up
+
+Plugging the devices into each other was the scary part...but it worked! The AirPods charged without a fuss and my phone didn't burst into flames. I kept track of the charge reported and have compiled those results below. It's in  line with expectations -- slower than using the wall adapter charger but in a pinch this could work.
+
+<iframe width="560" height="315" class="center" src="https://www.youtube.com/watch?v=kXKbaTPtOZc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+It's also true that if I plug my iPhone 6 into my iPhone X (using the 6 as the charge doner) the charging does appear to activate, however, it doesn't seem to actually charge. This is likely because there just isn't enough power coming out of the doner iPhone. 
+
+## Gotchas
+
+The iPhone fan connector is pretty sensitive and easy to break – I broke my first version of this after testing for a day just from repeated insertion. I suggest putting some sort of casing around the chip so it doesn’t flex against the lightning connector. In my final build, I cut the fan casing to keep part of the shell around the lightning cable and used hot glue to keep it fixed to the circuit. That way I could insert the cable without worrying as much about breaking the connector.
+
+ 
+## Sources
+
+[1] [This youtube video](https://www.youtube.com/watch?v=UTcHMXF6P9M) claims to make an iPhone to iPhone charger in a similar way. Several comments suggest the charging shown here might be fake. From the calculations, I just don’t see how it’s possible to extract enough power to charge a phone in this way. But it’s not totally fake – I think if he had tried other devices it might have worked, just like what I'm seeing in these results. 
