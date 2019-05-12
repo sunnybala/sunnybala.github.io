@@ -15,6 +15,10 @@ Several tech journalists have speculated that the new iPhone later this year wil
     margin-right: auto;
 }
 
+img {
+	height: 250 px;
+}
+
 </style>
 
 ## The Plan
