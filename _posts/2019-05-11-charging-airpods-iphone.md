@@ -24,11 +24,11 @@ img height="400" {
 
 ## The Plan
 
-Build a cable to extract power from an iPhone and use it to charge other devices. 
+Build a cable to extract power from an iPhone and use it to charge other devices. I don't have much experience with electronics so it's also an 
 
 ## Background
 
-I couldn't seem to find much online about this except other people asking if this sort of thing was possible. There was a [crowdfunded product](https://www.indiegogo.com/projects/chargebite-a-social-charger "Indiegogo") for something in the space 5-6 years ago, but that required having 2 iPhones to donate power to charge 1. The lack of previous work on charging in this way, even for hobby projects, definitely made me suspicious that there was a big roadblock somewhere in the process that I would hit. I was pretty surprised to see this actually work! I think I lucked out due to the lower charging requirements of the AirPods relative to the iPhone.
+I couldn't seem to find much online about this except other people asking if this sort of thing was possible. There was a [crowdfunded product](https://www.indiegogo.com/projects/chargebite-a-social-charger "Indiegogo") for something in the space 5-6 years ago, but that required having 2 iPhones to donate power to charge 1. There's one <a href="#sources"> YouTube video </a> that claimed to do this but many of the comments suggested that it was fake. Based on what I've seen, the specific claims of iPhone to iPhone charging appear to be fake but using that method for airpods works. The lack of other prior work on charging in this way, even for hobby projects, definitely made me suspicious that there was a big roadblock somewhere in the process that I would hit. I was pretty surprised to see this actually work! I think I lucked out due to the lower charging requirements of the AirPods relative to the iPhone. 
 
 For anyone following along to try the same, **definitely proceed at your own risk with making this. I’m no expert so I can’t speak to whether this can damage your devices.**
 
@@ -78,7 +78,7 @@ I used a step up regulator I bought from Amazon to convert from 3.3V to 5V. The 
 
 Plugging the devices into each other was the scary part...but it worked. The AirPods charged without a fuss and my phone didn't burst into flames. I kept track of the charge reported and measured a charge of rate of 2% per minute on the case (measured minutely over 40 minutes). My expectation was that this DIY charger would be slower. Surprisingly, that's the same charge rate that I record with the standard wall adapter over a similar measurement period! 
 
-<iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/kXKbaTPtOZc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" class="center" src="https://youtu.be/tDveHRmT92o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 <br>
 It's also true that if I plug my iPhone 6 into my iPhone X (using the 6 as the charge donor) the charging does appear to activate, however, it doesn't seem to actually charge. This is likely because there just isn't enough power coming out of the donor iPhone. 
 
