@@ -3,10 +3,11 @@ layout: post
 title: Charging AirPods with an iPhone
 comments: true
 ---
-
 <meta property="og:image" content="http://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/solder_lightning.jpg"/>
 
-Several tech journalists have speculated that the new iPhone later this year will be able to share its power to charge AirPods. **Why bother waiting till Fall when we can build something to do it today?**
+Several [tech journalists](https://appleinsider.com/articles/19/04/01/2019-iphone-should-be-able-to-power-the-airpods-wireless-charging-case) have speculated that the new iPhone later this year will be able to share its power to charge AirPods. That's great for people that buy the new airpods and the newest phone...but what about the rest of us? **Good news -- there's no need to wait till October 2019 when we can build something to do it today!**
+
+<img height="400" src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/solder_lightning.jpg" class="center"/>
 
 <style>
 .center {
@@ -75,7 +76,7 @@ I used a step up regulator I bought from Amazon to convert from 3.3V to 5V. The 
 
 #### Results
 
-Plugging the devices into each other was the scary part...but it worked. The AirPods charged without a fuss and my phone didn't burst into flames. I kept track of the charge reported and have compiled those results below. It's in  line with expectations -- slower than using the wall adapter charger but in a pinch this could work.
+Plugging the devices into each other was the scary part...but it worked. The AirPods charged without a fuss and my phone didn't burst into flames. I kept track of the charge reported and measured a charge of rate of 2% per minute on the case (measured minutely over 40 minutes). My expectation was that this DIY charger would be slower. Surprisingly, that's the same charge rate that I record with the standard wall adapter over a similar measurement period! 
 
 <iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/kXKbaTPtOZc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 <br>
