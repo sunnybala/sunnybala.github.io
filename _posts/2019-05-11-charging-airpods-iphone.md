@@ -3,7 +3,7 @@ layout: post
 title: Charging AirPods with an iPhone
 comments: true
 ---
-<meta property="og:image" content="http://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/solder_lightning.jpg"/>
+<meta property="og:image" content="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/solder_lightning.jpg"/>
 
 Several [tech journalists](https://appleinsider.com/articles/19/04/01/2019-iphone-should-be-able-to-power-the-airpods-wireless-charging-case) have speculated that the new iPhone later this year will be able to share its power to charge AirPods. That's great for people that buy the new airpods and the newest phone...but what about the rest of us? **Good news -- there's no need to wait till October 2019 when we can build something to do it today!**
 
