@@ -78,8 +78,9 @@ I used a step up regulator I bought from Amazon to convert from 3.3V to 5V. The 
 
 Plugging the devices into each other was the scary part...but it worked. The AirPods charged without a fuss and my phone didn't burst into flames. I kept track of the charge reported and measured a charge of rate of 2% per minute on the case (measured minutely over 40 minutes). My expectation was that this DIY charger would be slower. Surprisingly, that's the same charge rate that I record with the standard wall adapter over a similar measurement period! 
 
-<iframe width="560" height="315" class="center" src="https://youtu.be/tDveHRmT92o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/tDveHRmT92o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 <br>
+
 It's also true that if I plug my iPhone 6 into my iPhone X (using the 6 as the charge donor) the charging does appear to activate, however, it doesn't seem to actually charge. This is likely because there just isn't enough power coming out of the donor iPhone. 
 
 ## Gotchas
