@@ -4,6 +4,8 @@ title: Numerically Reducing Elevator Awkwardness
 comments: true
 ---
 
+<meta property="og:image" content="http://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/elevator_standing.PNG"/>
+
 <style>
 .center {
     display: block;
@@ -116,7 +118,9 @@ As I discussed this project with some coworkers, one of them pointed out that th
 
 The problem tries to figure out the biggest size *n* circles could be and still all fit in a square. One way to think about this is that each circle represents the comfort zone of a person. These seem to minimize the second metric I was showing, minimum pairwise distance.
 
-On one hand, that's great that there's a quick reference and it's possible to verify my results against those from wikipedia. On the other hand, it's a little like peeking at the answer to a riddle in that it takes away from the thrill of the solving adventure. The great news is that it confirms that the arrangements I was seeing seem to be correct, it's been pretty neat to work on. An exhaustive set of optimal arrangements can be found [at the wikipedia page.](https://en.wikipedia.org/wiki/Circle_packing_in_a_square) 
+On one hand, that's great that there's a quick reference and it's possible to verify my results against those from wikipedia. On the other hand, it's a little like peeking at the answer to a riddle in that it takes away from the thrill of the solving adventure. The great news is that it confirms that the arrangements I was seeing seem to be correct, it's been pretty neat to work on. An exhaustive set of optimal arrangements can be found [at the wikipedia page.](https://en.wikipedia.org/wiki/Circle_packing_in_a_square). I've created a cheat sheet below so that you can print it out and post it in your local elevator as well.
+
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/elevator_standing.PNG" class="center"/>
 
 ## Further Extensions
 
