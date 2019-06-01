@@ -4,7 +4,7 @@ title: Numerically Reducing Elevator Awkwardness
 comments: true
 ---
 
-<meta property="og:image" content="http://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/elevator_standing.PNG"/>
+<meta property="og:image" content="http://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/elevator_standing.GIF"/>
 
 <style>
 .center {
@@ -120,7 +120,7 @@ The problem tries to figure out the biggest size *n* circles could be and still 
 
 On one hand, that's great that there's a quick reference and it's possible to verify my results against those from wikipedia. On the other hand, it's a little like peeking at the answer to a riddle in that it takes away from the thrill of the solving adventure. The great news is that it confirms that the arrangements I was seeing seem to be correct, it's been pretty neat to work on. An exhaustive set of optimal arrangements can be found [at the wikipedia page.](https://en.wikipedia.org/wiki/Circle_packing_in_a_square). I've created a cheat sheet below so that you can print it out and post it in your local elevator as well.
 
-<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/elevator_standing.PNG" class="center"/>
+<img src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/elevator_standing.GIF" class="center"/>
 
 ## Further Extensions
 
