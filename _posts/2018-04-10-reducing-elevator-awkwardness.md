@@ -106,7 +106,7 @@ The hope is that after some time of simulation these things converge. Just to ma
 ## Results
 At first glance, it looks like the simulation works! Here's a video of the simulation at work for 3,5,8 and 9 and 20 people. 
 
-<iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/YmWoTLbbdMk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="100%" height="315" class="center" src="https://www.youtube.com/embed/YmWoTLbbdMk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Starting places are random and matter when looking at results. For example, check out these two scenarios for 5 people. Just because the simulation ends at something stable, it doesn't mean we've found something optimal. 
 
