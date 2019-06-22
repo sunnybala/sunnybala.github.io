@@ -9,7 +9,7 @@ Wireless iPhone Qi chargers tend to look pretty boring; they are usually just a 
 #### Finished Project
 
 <div class="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lBUL7XBWGfc" frameborder="0" allow="accelerometer;encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/lBUL7XBWGfc" frameborder="0" allow="accelerometer;encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <style>

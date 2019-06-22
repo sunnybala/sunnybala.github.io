@@ -134,7 +134,7 @@ steps = [(0,1),(1,0),(1,1),...]           # differences
 
 And...viola! The path above is exactly what we needed. The motors are a bit slow, so here's a time lapse of the etch a sketch drawing an elephant. This represents about 20 minutes of time in real life. 
 
-<iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/dieIlMUOwns?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="100%" height="315" class="center" src="https://www.youtube.com/embed/dieIlMUOwns?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Not bad at all. Below are a few other examples. An additional note -- my program resizes images which can end up stretching them a bit horizontally. This was done just for convenience to make sure all input pictures would fit on the screen. If there's a specific picture you really wanted to draw, you wouldn't need to do this. All of these run for several hours. 
 
