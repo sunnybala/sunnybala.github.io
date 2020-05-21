@@ -119,7 +119,8 @@ I've reproduced the display code below -- you'll be able to see that it's really
 
 #### Step 4: Closing Things Up
 
-<img height="400" src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/train_display_cad.PNG"class="center"/>
+<img height="400" src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/train_display_cad.PNG" 
+class="center"/>
 
 At this point, all I needed was a case. Since the whole thing is meant to capture the same blocky aesthetic as the current train displays, it was relatively straightfoward to create a rectangular box in Fusion360 and then print it on my Ender 3-D printer. I'm certainly a beginner when it comes to CAD but there wasn't much iteration involved here. I'm making the STL file from the build available [here](https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/cad/train_display_case.stl).
 
