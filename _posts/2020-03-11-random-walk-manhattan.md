@@ -4,7 +4,7 @@ title: A Random Walk Through Manhattan
 comments: true
 ---
 
-<img height="100%" src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/animated_compress_7.gif" 
+<img height="900" src="https://raw.githubusercontent.com/sunnybala/sunnybala.github.io/master/assets/animated_compress_7.gif" 
 class="center"/>
 
 At the time of writing this, we're currently under stay at home orders in observation of the Covid-19 pandemic. Taking those nice long walks around Manhattan at this time is ill-advised, but how about a digital one? In particular, here I'll explore how to generate random walks within a map network. 
