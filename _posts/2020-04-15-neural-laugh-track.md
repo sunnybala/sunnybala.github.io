@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Neural Speech Synthesis 1: Generating Laugh Tracks
+title: Neural Speech Synthesis 1| Generating Laugh Tracks
 comments: true
 ---
 
