@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Neural Speech Synthesis 1: Generating Laugh Tracks
-visible: 0
+visible: 1
 comments: true
 ---
 
