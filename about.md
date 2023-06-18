@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-Hi, I'm Sunny. Former quantitative researcher at AQR. Curious about anything and everything, always interested in seeing what interesting problems programming and statistics can solve.
+Hi, I'm Sunny. Former quantitative researcher at Citadel and AQR. Curious about anything and everything, always interested in seeing what interesting problems programming and statistics can solve.
 
 Columbia SEAS '16. 
 
